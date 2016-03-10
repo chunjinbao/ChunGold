@@ -26,7 +26,7 @@
             <value>jdbc:mysql://localhost:3306/chunjinbao</value>  
         </property>  
         <property name="username">  
-            <value>admin</value>  
+            <value>root</value>  
         </property>  
         <property name="password">  
             <value>admin</value>  
