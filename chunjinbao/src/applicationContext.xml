@@ -29,7 +29,7 @@
             <value>chunjinbao</value>  
         </property>  
         <property name="password">  
-            <value>12345</value>  
+            <value>1234</value>  
         </property>  
    
     </bean>  
