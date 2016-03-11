@@ -23,7 +23,7 @@
             <value>com.mysql.jdbc.Driver</value>  
         </property>  
         <property name="url">  
-            <value>jdbc:mysql://120.24.72.147:3306/chungold</value>  
+            <value>jdbc:mysql://120.24.72.147:3306/chunjinbao</value>  
         </property>  
         <property name="username">  
             <value>chunjinbao</value>  
@@ -31,7 +31,7 @@
         <property name="password">  
             <value>12345</value>  
         </property>  
-  
+   
     </bean>  
 
 	<bean id="sessionFactory"
