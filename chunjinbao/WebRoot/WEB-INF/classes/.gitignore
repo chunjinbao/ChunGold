@@ -1,1 +1,7 @@
 /Util
+/action
+/applicationContext.xml
+/dao
+/entity
+/service
+/struts.xml

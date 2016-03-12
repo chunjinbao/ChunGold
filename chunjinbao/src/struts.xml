@@ -7,5 +7,8 @@
             <result name="success">/success.jsp</result>   
             <result name="login">/index.jsp</result>
        </action>
+       
+       <action name="util_*" class="utilAction" method="{1}">  
+       </action>
     </package>
 </struts>    
