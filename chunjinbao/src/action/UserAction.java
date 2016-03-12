@@ -33,6 +33,7 @@ public class UserAction extends ActionSupport{
 			}
 			//加入新的登录信息
 			session.setAttribute("curUsrName", dbUser.getRelName());
+			session.setAttribute("goldNum", dbUser.getGoldNum());
 			
 		}
 		
