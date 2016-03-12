@@ -85,4 +85,8 @@
     
     <bean id="utilAction" class="action.UtilAction" scope="prototype">  
     </bean>
+    
+       <bean id="navAction" class="action.NavAction" scope="prototype">  
+    </bean>
+    
 </beans>

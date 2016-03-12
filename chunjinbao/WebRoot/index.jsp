@@ -158,10 +158,10 @@ if (session.getAttribute("curUsrName")==null){
 		
 <nav>
 	<ul class="clearfix">
-    	<li><a href="chunjinbao/index" class="active"><i class="n1"></i>首页</a></li>
-        <li><a href="chunjinbao/products" ><i class="n2"></i>淘金</a></li>
-        <li><a href="chunjinbao/gold" ><i class="n3"></i>金库</a></li>
-        <li><a href="chunjinbao/more"  ><i class="n4"></i>我的</a></li>
+    	<li><a href="/chunjinbao/nav_index" class="active"><i class="n1"></i>首页</a></li>
+        <li><a href="/chunjinbao/nav_products" ><i class="n2"></i>淘金</a></li>
+        <li><a href="/chunjinbao/nav_gold" ><i class="n3"></i>金库</a></li>
+        <li><a href="/chunjinbao/nav_more"  ><i class="n4"></i>我的</a></li>
     </ul>
 </nav>
 

@@ -10,5 +10,12 @@
        
        <action name="util_*" class="utilAction" method="{1}">  
        </action>
+       
+       <action name="nav_*" class="navAction" method="{1}">
+       		<result name="index">/index.jsp</result>
+            <result name="products">/products.jsp</result>   
+            <result name="gold">/gold.jsp</result>
+            <result name="more">/more.jsp</result>
+       </action>
     </package>
 </struts>    
