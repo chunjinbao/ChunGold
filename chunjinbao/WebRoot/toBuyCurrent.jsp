@@ -352,10 +352,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 <nav>
 	<ul class="clearfix">
-    	<li><a href="wxMainController.do?index" ><i class="n1"></i>首页</a></li>
-        <li><a href="wxMainController.do?products" class="active"><i class="n2"></i>淘金</a></li>
-        <li><a href="wxMainController.do?gold" ><i class="n3"></i>金库</a></li>
-        <li><a href="wxMainController.do?more"  ><i class="n4"></i>我的</a></li>
+    	<li><a href="/chunjinbao/nav_index" ><i class="n1"></i>首页</a></li>
+        <li><a href="/chunjinbao/nav_products" class="active"><i class="n2"></i>淘金</a></li>
+        <li><a href="/chunjinbao/nav_gold" ><i class="n3"></i>金库</a></li>
+        <li><a href="/chunjinbao/nav_more"  ><i class="n4"></i>我的</a></li>
     </ul>
 </nav>
 
