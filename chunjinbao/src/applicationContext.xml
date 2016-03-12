@@ -86,7 +86,9 @@
     <bean id="utilAction" class="action.UtilAction" scope="prototype">  
     </bean>
     
-       <bean id="navAction" class="action.NavAction" scope="prototype">  
+    <bean id="navAction" class="action.NavAction" scope="prototype">  
     </bean>
     
+    <bean id="priceAction" class="action.PriceAction" scope="prototype">
+    </bean>
 </beans>
