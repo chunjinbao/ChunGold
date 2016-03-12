@@ -1,0 +1,135 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0025) -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="plug-in/web/statics/images/favicon.ico">
+<title>购金宝-会赚钱的黄金！</title>
+<meta name="description" content="购金宝1元起购、以上海黄金交易所开盘价为准，不仅可以兑付黄金实物，还可以替投资者免费保管所购买的黄金，并给付“固定租金收益和上涨收益（按比例分成，下跌兜底，）”，客户随时可以通过网站和微信端或APP申请提取、存储、处置您的黄金。
+主营：黄金租赁、黄金投资、黄金零售">
+<meta name="keywords" content="购金宝官网,黄金,金价,黄金价格,实物黄金,投资金条,黄金投资">
+<meta name="baidu-site-verification" content="vd02hBZpfM">
+<link rel="stylesheet" href="plug-in/web/home_files/vendor.css">
+<link rel="stylesheet" href="plug-in/web/home_files/index.css">
+<!--列表-->
+<link href="plug-in/web/home_files/common5.css" rel="stylesheet" type="text/css"> 
+<link href="plug-in/web/home_files/index5.css" rel="stylesheet" type="text/css">
+
+<script src="plug-in/web/home_files/jquery-1.11.2-min.js"></script>
+<script src="plug-in/web/home_files/myCommon.js"></script>
+<script src="plug-in/web/home_files/index.js"></script>
+
+</head>
+
+<body>
+
+	
+
+<div class="home-bannar" >
+
+<!--新手专享  产品列表  金价走势图 产品特点-->
+<div class="row-info-noline" style="margin-bottom:43px;">
+
+    <div class="pay_sucess">
+      <div class="table_cell" style="text-align:center;">
+        <img src="plug-in/web/images/web_pic39.png" >
+        </div>
+        
+    </div>
+
+</div>
+<!-- end活期金  特权黄金-->
+
+
+<!--浮动导航JS-->
+<script type="text/javascript">
+var showBar = getCookie("ISBAR")=="1"?false:true;
+var isindex = $(".isindex");
+if(isindex.length){
+	showBar=true;
+}
+if(showBar){
+	foot_fk_box();
+}
+function foot_fk_box(){
+	var foot_fk_box = document.getElementById("u-rbar");
+	var foot_fk_body = document.getElementById("body1120");
+
+	$("#u-rbar").width(105);//重新设置u-rbar的宽度
+
+	if(window.innerWidth<1416){
+	  foot_fk_box.style.right="10px";
+	  foot_fk_box.style.left="auto";
+	}
+	else{
+	  var sw = window.innerWidth ? window.innerWidth : document.documentElement.offsetWidth;
+	  var topleft = foot_fk_body ? (sw-1120)/2+1225 : (sw-1000)/2+1105
+	  foot_fk_box.style.left=topleft+"px";
+	  foot_fk_box.style.right="auto";
+	}
+	if($(window).width()<=640){
+		foot_fk_box.style.display="none";
+	}else{
+		foot_fk_box.style.display="block";
+	}
+	
+}
+$(".bar-close").click(function(){
+	$("#u-rbar").hide();
+	setCookie("ISBAR",1,0);
+	showBar=false;
+})
+/*页面重新计算底部u-rbar的位置*/
+$(window).resize(function(){
+	if(showBar){
+		foot_fk_box();
+	}
+})
+$("#backup").hide();//go back to top
+$(function () {
+	$(window).scroll(function(){
+		if ($(window).scrollTop()>180){$("#backup").fadeIn(500);}
+		else {$("#backup").fadeOut(500);}
+	});
+	$("#backup").click(function(){
+		$('body,html').animate({scrollTop:0},500);
+			return false;
+	});
+});
+
+
+</script>
+<!--end浮动导航JS-->
+     	
+
+</div>
+
+<!-- 选择支付方式切换 -->
+<script type="text/javascript">
+  $(function() {
+    $("#pay1").click(function(event) {
+      $(".online_pay_bd h2 span").show();
+    });
+    $("#pay2").click(function(event) {
+      $(".online_pay_bd h2 span").hide();
+    });
+    $("#pay3").click(function(event) {
+      $(".online_pay_bd h2 span").hide();
+    });
+  });
+</script>
+</body>
+</html>

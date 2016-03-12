@@ -5,7 +5,7 @@
        <action name="user_*" class="userAction" method="{1}">  
        		<result name="error">/error.jsp</result>
             <result name="success">/success.jsp</result>   
-            <result name="login">/index.jsp</result>
+            <result name="login">/index_chunjinbao.jsp</result>
        </action>
        
        <action name="util_*" class="utilAction" method="{1}">  
