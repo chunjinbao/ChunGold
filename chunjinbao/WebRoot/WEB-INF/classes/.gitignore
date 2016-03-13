@@ -1,10 +1,5 @@
-/Util
 /action
-<<<<<<< HEAD
-/applicationContext.xml
+/interceptor
 /dao
-/entity
 /service
-/struts.xml
-=======
->>>>>>> branch 'master' of https://github.com/chunjinbao/ChunGold.git
+/entity

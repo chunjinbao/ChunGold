@@ -80,13 +80,16 @@
     </bean>  
     
     <bean id="userAction" class="action.UserAction" scope="prototype">  
-        <property name="userService" ref="userService"></property>  
     </bean>
     
     <bean id="utilAction" class="action.UtilAction" scope="prototype">  
     </bean>
     
-       <bean id="navAction" class="action.NavAction" scope="prototype">  
+    <bean id="navAction" class="action.NavAction" scope="prototype">  
+    </bean>
+    
+    <bean id="loginAction" class="action.LoginAction" scope="prototype">  
+        <property name="userService" ref="userService"></property>  
     </bean>
     
 </beans>

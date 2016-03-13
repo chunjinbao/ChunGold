@@ -2,13 +2,12 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+String userName=null;
+if (session.getAttribute("curUsrTel")!=null){
+    userName = session.getAttribute("curUsrTel").toString();
+}
 %>
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -28,14 +27,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body style="overflow-y: hidden;overflow-x: hidden;">
 	<section class="warp">
     	<div class="vip_center_hd" style="margin-bottom: 12px;">
-        	<a href="wxMoreCenterController.do?moreMyInfoShow">
+        	<a href="/chunjinbao/user_userDetail">
         		<span><img src="plug-in/wechat/images/icon8.png" width="10"></span>
                 <dl>
                 	<dt><img 
                     	 src="plug-in/wechat/images/pic2.jpg" ></dt>
                 	<dt id="nameId" style="font-size: 18px; margin-left: 10px;">
-                	  *** **** ***
-                	  
+                	  登录/注册
                 	</dt>
                 </dl>
             </a>
@@ -96,6 +94,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </section>
     
 <script type="text/javascript">
+var userName=<%=userName%>;
+
+$(function (){
+	if(userName!=null)
+		$("#nameId").html(userName);
+});
+
 //退出登录
 function comLoginOut(){
 	

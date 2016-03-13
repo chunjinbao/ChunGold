@@ -15,21 +15,21 @@ public class User {
 	private Integer userId;
 	@Column(name="TEL",nullable=false,unique=true,length=50)
 	private String tel;
-	@Column(name="PASSWORD",nullable=false,length=50)
+	@Column(name="PASSWORD",nullable=true,length=50)
 	private String password;
-	@Column(name="RELNAME",nullable=false,length=50)
+	@Column(name="RELNAME",nullable=true,length=50)
 	private String relName;
 	@Column(name="CARDNUM",nullable=true,length=50)
 	private String cardNum;
-	@Column(name="TRADEPSW",nullable=false,length=50)
+	@Column(name="TRADEPSW",nullable=true,length=50)
 	private String tradePsw;
-	@Column(name="IDENTITYCARD",nullable=false,length=50)
+	@Column(name="IDENTITYCARD",nullable=true,length=50)
 	private String identityCard;
 	@Column(name="GOLDNUM",nullable=true,length=50)
 	private String goldNum;
 	@Column(name="WALLET",nullable=true,length=50)
 	private String wallet;
-	@Column(name="ADDRESS",nullable=false,length=50)
+	@Column(name="ADDRESS",nullable=true,length=50)
 	private String address;
 	
 	

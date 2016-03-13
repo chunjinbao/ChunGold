@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -37,9 +38,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
         <div class="reg">
         	<div class="logo"><img src="plug-in/wechat/images/logo.png" alt=""></div>
-        	<form id="form" action="wxLoginController.do?regSetpwd" method="post">
+        	<form id="form" action="<s:url action='login_register'/>" method="post">
             	<ul>
-                	<li><input id="userName" name="userName" type="tel" placeholder="请输入手机号码"></li>
+                	<li><input id="userName" name="user.tel" type="tel" placeholder="请输入手机号码"></li>
                     <li><input name="codeNum" id="codeNum" type="tel" placeholder="请输入验证码">
                     <button type="button" id="btnSendCode"   onclick="sendMessage()">获取验证码</button></li>
                     <li><input name="agree" type="checkbox" value="1" id="agree" class="check" checked="checked"><label for="agree"><em>已阅读并同意<a href="wxHelpController.do?agreement">《购金宝服务协议》</a></em></label>
@@ -142,8 +143,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		//
 		function sendMessagesTrim() {
-	  　 curCount = count;
-	　　 //设置button效果，开始计时
+		curCount = count;
+		//设置button效果，开始计时
 	     $("#time").val(2);
 		 $("#btnSendCode").attr("disabled", "disabled");
 		 $("#btnSendCode").text(+ curCount + "S后重新获取");
@@ -157,46 +158,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			var sub = true;
 			
 			//验证码判断是否为空
-			if($("#codeNum").val() == ""){
+// 			if($("#codeNum").val() == ""){
 				
-				$("#codeNum").focus();
+// 				$("#codeNum").focus();
 				
-				megs("验证码不能为空!");
+// 				alert("验证码不能为空!");
 				
-				sub = false;
+// 				sub = false;
 				
-			}
+// 			}
 			//手机判断
 			if(!myreg.test($("#userName").val())){
 				$("#userName").focus();
-				megs("手机格式不对!");
+				alert("手机格式不对!");
 				sub = false;
 			}
 			//判断验证码时间是否过期
 			
 			
 			
-			if($("#time").val() == 1){
-				megs("你的验证码以过期!");
-				sub = false;
+// 			if($("#time").val() == 1){
+// 				alert("你的验证码以过期!");
+// 				sub = false;
 				
-			}
+// 			}
 			
 			//判断是否同意协议
 
 			
 			if($("#agree").attr("checked") != "checked"){
-				megs("请选择购金宝协议!");
+				alert("请选择购金宝协议!");
 				sub = false;
 			}
 			
 			//判断提交时候的手机与获取验证码的手机是否一致
-			if(phoneNum != $("#userName").val()){
+// 			if(phoneNum != $("#userName").val()){
 				
-				megs("收到验证手机与注册手机不一致!");
-				sub = false;
+// 				alert("收到验证手机与注册手机不一致!");
+// 				sub = false;
 				
-			}
+// 			}
 			
 			
 			if(sub){

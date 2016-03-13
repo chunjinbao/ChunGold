@@ -1,15 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -36,12 +30,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<section class="warp">
         <div class="login">
         	<div class="logo"><img src="plug-in/wechat/images/logo.png" alt=""></div>
-        	<form name="form" id="form" action="wxLoginController.do?goLogin" method="post">
+        	<form name="form" id="form" action="<s:url action='login_login'/>" method="post">
             	<ul>
-                	<li><input name="userName" id="userName" type="tel" value="" placeholder="请输入手机号"></li>
-                    <li><input name="password" id="password" type="password" placeholder="请输入密码"></li>
+                	<li><input name="user.tel" id="userName" type="tel" value="" placeholder="请输入手机号"></li>
+                    <li><input name="user.password" id="password" type="password" placeholder="请输入密码"></li>
                     <li><a href="javascript:submitFrom();">登 录</a></li>
-                    <li><a href="wxLoginController.do?reg"><span>注册新用户</span></a></li>
+                    <li><a href="<s:url action='login_register'/>"><span>注册新用户</span></a></li>
                     <li><a href="wxSafeController.do?mymodifyLoginPassword&type=3" class="fr">忘记密码？</a></li>
                 </ul>
             </form>
@@ -52,10 +46,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 <nav>
 	<ul class="clearfix">
-    	<li><a href="wxMainController.do?index" ><i class="n1"></i>首页</a></li>
-        <li><a href="wxMainController.do?products" ><i class="n2"></i>淘金</a></li>
-        <li><a href="wxMainController.do?gold" ><i class="n3"></i>金库</a></li>
-        <li><a href="wxMainController.do?more"  class="active"><i class="n4"></i>我的</a></li>
+    	<li><a href="/chunjinbao/nav_index" ><i class="n1"></i>首页</a></li>
+        <li><a href="/chunjinbao/nav_products" ><i class="n2"></i>淘金</a></li>
+        <li><a href="/chunjinbao/nav_gold" ><i class="n3"></i>金库</a></li>
+        <li><a href="/chunjinbao/nav_more"  class="active"><i class="n4"></i>我的</a></li>
     </ul>
 </nav>
 
@@ -83,19 +77,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		if(!myreg.test($("#userName").val())){
 			//提示
-			megs("您的手机格式不对，请检查你的手机！");
+			alert("您的手机格式不对，请检查你的手机！");
 			
 			sub = false;
 		}
 		
 		if($("#userName").val() == ""){
-			megs("用户不能为空!");
+			alert("用户不能为空!");
 			
 			sub = false;
 		}
 		
 		if($("#password").val() == ""){
-			megs("密码不能为空!");
+			alert("密码不能为空!");
 			
 			sub = false;
 		}
