@@ -39,7 +39,6 @@
        
        	<action name="login_*" class="loginAction" method="{1}">
        		<result name="success">/moreMyInfoShow.jsp</result>
-       		<result name="login">/reg.jsp</result>
 	   	</action>
        
        <action name="price_*" class="priceAction" method="{1}"> 

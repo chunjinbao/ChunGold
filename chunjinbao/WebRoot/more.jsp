@@ -111,22 +111,22 @@ function comLoginOut(){
 function sessionLogout(){
 	
 	$.ajax({
-		url:'wxMoreController.do?logout',
+		url:'/chunjinbao/login_logout',
 		type:"post",
-		dataType:"json",
+		dataType:"text",
 		success:function(result){
-			if(result.code=="ok"){
+			if(result=="ok"){
 				if(result.url!=""){
 					
-					window.location.href = 'gjb.do?wx';
+					window.location.href = '/chunjinbao/index.jsp';
 					return;
 				}
 			}else{
-				megs(result.msg);
+				alert(result.msg);
 			}
 		},
 		error:function(){
-			megs('网络异常');
+// 			megs('网络异常');
 		}
 	});
 }	

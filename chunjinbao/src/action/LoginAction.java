@@ -1,10 +1,14 @@
 package action;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
 import service.UserService;
+import Util.GetGoldPrice;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
@@ -32,11 +36,31 @@ public class LoginAction extends ActionSupport{
 		}else{
 			HttpSession session = ServletActionContext.getRequest().getSession();
 			
+			
 			session.setAttribute("curUsrTel", dbUser.getTel());
-			session.setAttribute("goldNum", dbUser.getGoldNum());
+			
+			session.setAttribute("userName", dbUser.getUserName());
+			
 			
 		}
 		return Action.SUCCESS;
+	}
+	public void logout(){
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		session.removeAttribute("curUsrTel");
+		
+		session.removeAttribute("userName");
+		
+		HttpServletResponse response = ServletActionContext.getResponse(); 
+
+		response.setContentType("text/plain;charset=UTF-8");
+		
+		try {
+			response.getWriter().write("ok");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public User getUser() {
