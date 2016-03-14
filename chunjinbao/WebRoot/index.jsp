@@ -8,12 +8,12 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 String userName = null;
-String goldNum = "0.00";
-if (session.getAttribute("curUsrName")==null){
+String userTel =  null;
+if (session.getAttribute("curUsrTel")==null){
 	
 }else{
-    userName = session.getAttribute("curUsrName").toString();
-	goldNum = session.getAttribute("goldNum").toString();
+    userName = session.getAttribute("userName").toString();
+	userTel = session.getAttribute("curUsrTel").toString();
 }
 	
 %>
@@ -148,7 +148,7 @@ if (session.getAttribute("curUsrName")==null){
             </li>
 			<div style="width:85%;margin-bottom:20px;"><img style="margin-top:-4px;" src="plug-in/wechat/images/safe.png" alt="">
 
-			<p style="font-size: 15px;">当前登录用户：<%= userName%></p>
+			<p style="font-size: 15px;">当前登录用户：<%= userTel%></p>
 			</div>
 			<br><br><br><br>
         </ul>

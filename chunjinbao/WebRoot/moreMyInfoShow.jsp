@@ -2,6 +2,12 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String userTel = null;
+if (session.getAttribute("curUsrTel")==null){
+	
+}else{
+    userTel = session.getAttribute("curUsrTel").toString();
+}
 %>
 
 
@@ -37,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 function cancle(){
 	//返回个人中心 
-	window.location.href = "wxMainController.do?more";
+	window.location.href = "/chunjinbao/nav_more";
 }
 
 </script>
@@ -48,14 +54,14 @@ function cancle(){
             <form id="form1" name="form1" method="post">
             <input type="hidden" id="mobileId"   value="15521096419" name="mobile" readonly="readonly">
                 <ul>
-                    <li> <a href="wxMoreCenterController.do?moreMyInfoEditor" ><span style="color:#acacac ;font-size:14px;margin-right: 10px;">点击修改</span> </a>
+                    <li> <a href="/chunjinbao/moreMyInfoEditor" ><span style="color:#acacac ;font-size:14px;margin-right: 10px;">点击修改</span> </a>
                     	<img id="avatarId"
                     	
                     	 src="plug-in/wechat/images/pic2.jpg" 
                     	width="60" height="60">
                     <!-- 	<input type="file" onchange = "asas()" accept="image/*;capture=camera"  id="file"  name="file"> -->
                     	</li>
-                    <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;">155****6419</span>
+                    <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;"><%= userTel %>></span>
                     <input name="headImg" id="headImg" type="hidden" value="" />
                     </li>
                     <li><b>用户名</b><input type="text" id="realName" value="" name="realName"  readonly="readonly"></li>
