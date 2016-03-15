@@ -44,8 +44,14 @@
        <action name="price_*" class="priceAction" method="{1}"> 
             <result name="price">/price.jsp</result> 
        </action>
+
        <action name="gold_*" class="goldAction" method="{1}"> 
             <result name="mygold">/myGold.jsp</result> 
+	   </action>
+       
+       <action name="product_*" class="action.ProductAction" method="{1}">
+       		<result name="success">/success.jsp</result>
+       		<result name="product_list">/products.jsp</result>
        </action>
 
     </package>

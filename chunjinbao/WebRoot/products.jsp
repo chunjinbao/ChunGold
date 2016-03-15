@@ -1,9 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 
 
 
@@ -43,103 +43,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </dd>
                             </dl>
                         </li>
-                        <p class="regu_text">定期产品</p>
                         
+                        <p class="regu_text">定期产品</p>
+                        <s:iterator id="product_list" value="productList">
                         <li>
                             <dl>
                                 <dt>
-                                    <p>保本稳赚金90天</p>
+                                    <p><s:property value="productName"/></p>
                                     <!-- <p><span>年化收益</span><b>投资期限</b></p> -->
-                                    <p><i>6.60</i><time>%</time><u>
-                                    新手专享 稳赚不赔
+                                    <p><i><s:property value="productProfit"/></i><time>%</time><u>
+                                    <s:property value="productDetail"/>
                                     
                                     	</u></p>
                                 </dt><!--
                              --><dd>
-                                    <p><a href="wxOrderRegularController.do?toBuyRegular&proId=2c9d858151620d5e01516213aac5000b"><i>买入</i></a></p>
+                                    <p><a href="toButCurrent.jsp?productId=<s:property value='productId'/>"><i>买入</i></a></p>
                                 </dd>
                             </dl>
                         </li>
+						</s:iterator>
 						
-                        <li>
-                            <dl>
-                                <dt>
-                                    <p>新手专享金15天</p>
-                                    <!-- <p><span>年化收益</span><b>投资期限</b></p> -->
-                                    <p><i>13.80</i><time>%</time><u>
-                                    
-                                    
-                                    	</u></p>
-                                </dt><!--
-                             --><dd>
-                                    <p><a href="wxOrderRegularController.do?toBuyRegular&proId=2c9d8581518f0da101518f1b3a350009"><i>买入</i></a></p>
-                                </dd>
-                            </dl>
-                        </li>
-						
-                        <li>
-                            <dl>
-                                <dt>
-                                    <p>定期金90天</p>
-                                    <!-- <p><span>年化收益</span><b>投资期限</b></p> -->
-                                    <p><i>4.80</i><time>%</time><u>
-                                    短期投资 快速回报
-                                    
-                                    	</u></p>
-                                </dt><!--
-                             --><dd>
-                                    <p><a href="wxOrderRegularController.do?toBuyRegular&proId=2c9d858151620d5e015162128a150009"><i>买入</i></a></p>
-                                </dd>
-                            </dl>
-                        </li>
-						
-                        <li>
-                            <dl>
-                                <dt>
-                                    <p>定期金180天</p>
-                                    <!-- <p><span>年化收益</span><b>投资期限</b></p> -->
-                                    <p><i>5.80</i><time>%</time><u>
-                                    半年投资 收益可观
-                                    
-                                    	</u></p>
-                                </dt><!--
-                             --><dd>
-                                    <p><a href="wxOrderRegularController.do?toBuyRegular&proId=2c9d858151620d5e015162121e460007"><i>买入</i></a></p>
-                                </dd>
-                            </dl>
-                        </li>
-						
-                        <li>
-                            <dl>
-                                <dt>
-                                    <p>定期金1年</p>
-                                    <!-- <p><span>年化收益</span><b>投资期限</b></p> -->
-                                    <p><i>7.00</i><time>%</time><u>
-                                    只需一年 收益不错
-                                    
-                                    	</u></p>
-                                </dt><!--
-                             --><dd>
-                                    <p><a href="wxOrderRegularController.do?toBuyRegular&proId=2c9d8581514cc34d01514cc45d2b0001"><i>买入</i></a></p>
-                                </dd>
-                            </dl>
-                        </li>
-						
-                        <li>
-                            <dl>
-                                <dt>
-                                    <p>定期金3年</p>
-                                    <!-- <p><span>年化收益</span><b>投资期限</b></p> -->
-                                    <p><i>11.00</i><time>%</time><u>
-                                    定期投资 超高收益
-                                    
-                                    	</u></p>
-                                </dt><!--
-                             --><dd>
-                                    <p><a href="wxOrderRegularController.do?toBuyRegular&proId=2c9d8581515c5b6e01515c5d16770001"><i>买入</i></a></p>
-                                </dd>
-                            </dl>
-                        </li>
+                        
 						
 
                     </ul>
