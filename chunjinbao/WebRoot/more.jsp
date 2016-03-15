@@ -68,7 +68,7 @@ if (session.getAttribute("curUsrTel")!=null){
                 
                 <li><a href="wxMoreController.do?askAnswer"><span><img src="plug-in/wechat/images/icon8.png" width="10"></span><i><img src="plug-in/wechat/images/icon12.png"></i>&nbsp;<em>理财问答</em></a></li>
                 <li><a href="wxMoreController.do?aboutUs"><span><img src="plug-in/wechat/images/icon8.png" width="10"></span><i><img src="plug-in/wechat/images/icon13.png"></i>&nbsp;<em>关于我们</em></a></li>
-                <div class="login_out"><a href="javascript:comLoginOut();">退出登录</a></div>
+                <div id="logou" class="login_out"><a href="javascript:comLoginOut();">退出登录</a></div>
             </ul>
         </div>
         
@@ -99,6 +99,9 @@ var userName=<%=userName%>;
 $(function (){
 	if(userName!=null)
 		$("#nameId").html(userName);
+	else{
+		$("#logou").hide();
+	}
 });
 
 //退出登录
@@ -126,7 +129,7 @@ function sessionLogout(){
 			}
 		},
 		error:function(){
-// 			megs('网络异常');
+ 			megs('网络异常');
 		}
 	});
 }	

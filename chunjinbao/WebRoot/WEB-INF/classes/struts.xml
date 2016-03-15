@@ -38,11 +38,14 @@
        	</action>
        
        	<action name="login_*" class="loginAction" method="{1}">
-       		<result name="success">/moreMyInfoShow.jsp</result>
+       		<result name="success">/more.jsp</result>
 	   	</action>
        
        <action name="price_*" class="priceAction" method="{1}"> 
             <result name="price">/price.jsp</result> 
+       </action>
+       <action name="gold_*" class="goldAction" method="{1}"> 
+            <result name="mygold">/myGold.jsp</result> 
        </action>
 
     </package>
