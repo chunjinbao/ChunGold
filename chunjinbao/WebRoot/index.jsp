@@ -108,7 +108,7 @@ if (session.getAttribute("curUsrTel")==null){
             <li class="home_group_1">
                 <ul>
                     <li><a href="wxExperController.do?gjbExperBalance"><img src="plug-in/wechat/images/pic10.png" alt=""><span>新手专享</span><b>30克特权黄金</b></a></li>
-                    <li><a href="wxMoreCenterController.do?share"><img src="plug-in/wechat/images/pic11.png" alt=""><span style="color:#ff7e3a;">邀请好友</span><b>成功邀请送现金</b></a></li>
+                    <li><a href="/chunjinbao/user_share"><img src="plug-in/wechat/images/pic11.png" alt=""><span style="color:#ff7e3a;">邀请好友</span><b>成功邀请送现金</b></a></li>
                 </ul>  
             </li>
 			<li class="home_group_2">
@@ -120,7 +120,7 @@ if (session.getAttribute("curUsrTel")==null){
             </li>
             <li class="home_group_3">
                 <ul>
-                    <a href="wxOrderCurrentController.do?toBuyCurrent">
+                    <a href="/chunjinbao/user_share">
                     <li class="li_l">
                         <img src="plug-in/wechat/images/pic14.png" alt=""><span>随买随卖，灵活投资</span><b class="first">2.50%</b>
                         <!-- <ol>

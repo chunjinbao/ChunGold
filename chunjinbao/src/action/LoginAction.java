@@ -41,6 +41,7 @@ public class LoginAction extends ActionSupport{
 			
 			session.setAttribute("userName", dbUser.getUserName());
 			
+			session.setAttribute("shareId", dbUser.getshareId());
 			
 		}
 		return Action.SUCCESS;

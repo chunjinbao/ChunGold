@@ -15,4 +15,7 @@ public class UserAction extends ActionSupport{
 	public String userDetail(){
 		return "userDetail";
 	}
+	public String share(){
+		return "share";
+	}
 }
