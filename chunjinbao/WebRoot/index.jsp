@@ -132,7 +132,7 @@ if (session.getAttribute("curUsrTel")==null){
                         <!-- <i>%</i> -->
                     </a>
                     </li>
-                     <a href="wxMainController.do?products">
+                     <a href="/chunjinbao/nav_products">
                     <li class="li_r">
                         <img src="plug-in/wechat/images/pic15.png" alt=""><span>定期理财，更高收益</span><b>11.00%</b>
                        <!--  <ol>
@@ -153,7 +153,6 @@ if (session.getAttribute("curUsrTel")==null){
 			<br><br><br><br>
         </ul>
     <nav>
-		<!--åºé¨å¯¼èª-->
         
 		
 <nav>

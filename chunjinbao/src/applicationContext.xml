@@ -93,7 +93,8 @@
     <bean id="utilAction" class="action.UtilAction" scope="prototype">  
     </bean>
     
-    <bean id="navAction" class="action.NavAction" scope="prototype">  
+    <bean id="navAction" class="action.NavAction" scope="prototype"> 
+    	<property name="productService" ref="productService"></property>  
     </bean>
     
     <bean id="loginAction" class="action.LoginAction" scope="prototype">  
