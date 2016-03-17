@@ -37,7 +37,7 @@ public class Order {
 	}
 	public Date getTradeDate() {
 		return tradeDate;
-	}
+	} 
 	public void setTradeDate(Date tradeDate) {
 		this.tradeDate = tradeDate;
 	}

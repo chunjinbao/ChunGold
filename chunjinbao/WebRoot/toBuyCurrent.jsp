@@ -55,7 +55,7 @@ String productId=request.getParameter("productId");
                             <input name="" type="text" placeholder="实时金价" value="263.3 元/克" class="price" readonly="readonly">
                             
                         </li>
-                        <li><span>金额</span><input name="count1" type="number" placeholder="输入购买金额" id="count1" onkeyup="check_input('count1',2);"></li>
+                        <li><span>金额</span><input name="order.tradeAmount" type="number" placeholder="输入购买金额" id="count1" onkeyup="check_input('count1',2);"></li>
                         <li><span>预计克重</span><input name="total1" type="text" placeholder="0.000克"  id="total1" value="0"  readonly="readonly"></li>
                         <li><span>购金券</span><b>暂无购金券可用</b></li>
                     </ul>
@@ -64,6 +64,7 @@ String productId=request.getParameter("productId");
                         <label for="agree1"><em>我已阅读并同意<a href="wxHelpController.do?agreement">《购金宝服务协议》</a></em></label>
                     </div>
                     <div class="next"><a href="javascript:submitForm();">下一步</a></div>
+                    <input type="submit" value="Next" />
                     <div class="regularly_buy_info">
                     	<p>温馨提示</p>
                         <p>1、一元起购，随买随卖；</p>
