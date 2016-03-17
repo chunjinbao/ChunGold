@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	if(msg)
 		{
-		megs("");
+		alert("");
 		}
 	
 	
@@ -76,7 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		var sub = true;
 		
 		if(!myreg.test($("#userName").val())){
-			//提示
+			提示
 			alert("您的手机格式不对，请检查你的手机！");
 			
 			sub = false;
@@ -93,11 +93,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			sub = false;
 		}
-		
+
 		if(sub){
 			$("#form").submit();
 		}
-		
 		
 	}
 	</script>

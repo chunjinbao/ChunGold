@@ -3,9 +3,9 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
-String userName=null;
+String curUsrTel=null;
 if (session.getAttribute("curUsrTel")!=null){
-    userName = session.getAttribute("curUsrTel").toString();
+	curUsrTel = session.getAttribute("curUsrTel").toString();
 }
 %>
 
@@ -94,11 +94,11 @@ if (session.getAttribute("curUsrTel")!=null){
     </section>
     
 <script type="text/javascript">
-var userName=<%=userName%>;
+var curUsrTel=<%=curUsrTel%>;
 
 $(function (){
-	if(userName!=null)
-		$("#nameId").html(userName);
+	if(curUsrTel!=null)
+		$("#nameId").html(curUsrTel);
 	else{
 		$("#logou").hide();
 	}
