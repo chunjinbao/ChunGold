@@ -21,7 +21,6 @@ public class NavAction {
 	public String products(){
 		productList = productService.queryByProductName("2000");
 		productNumber = productList.size();
-		System.out.println(productNumber);
 		return "products";
 	}
 	public Product getProduct() {

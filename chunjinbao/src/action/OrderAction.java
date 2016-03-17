@@ -1,6 +1,9 @@
 package action;
 
+import java.sql.Time;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -19,9 +22,15 @@ public class OrderAction {
 	}
 	
 	public String insertOrder() throws Exception {
+		double goldPrice = 263.3;    //Set current gold price.
+		System.out.println(order.getTradeNum());
 		HttpServletRequest request = ServletActionContext.getRequest();
-		System.out.println("Here.");
-		System.out.println(request.getParameter("productId"));
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		order.setUserId((Integer) session.getAttribute("userId"));
+		order.setProductId(Integer.parseInt(request.getParameter("productId")));
+		orderService.insertOrder(order);
+		
+		
 		return null;
 		
 	}
