@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<section class="warp">
     
         <div class="regularly_buy">            
-            <form id="buyCurrentForm" name="buyCurrentForm" action="wxOrderCurrentController.do?doBuyCurrent" method="post">
+            <form id="buyCurrentForm" name="buyCurrentForm" action="<s:url action='user_insertUser' />" method="post">
             <input type="hidden" id="proId" name="proId" value="402880e951771ea201517722f561000a">
             <input type="hidden" id="buy_type" name="buy_type" value="1">
             <input type="hidden" id="goldprice" name="goldprice" value="263.3">
@@ -96,6 +96,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                 </div>
             </div>
+            </form>
             <script type="text/javascript">
         		function toLoadTitle(){
         			$("#count1").val('');

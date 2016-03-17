@@ -8,12 +8,12 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 String userName = null;
-String goldNum = "0.00";
-if (session.getAttribute("curUsrName")==null){
+String userTel =  null;
+if (session.getAttribute("curUsrTel")==null){
 	
 }else{
-    userName = session.getAttribute("curUsrName").toString();
-	goldNum = session.getAttribute("goldNum").toString();
+    userName = session.getAttribute("userName").toString();
+	userTel = session.getAttribute("curUsrTel").toString();
 }
 	
 %>
@@ -115,8 +115,8 @@ if (session.getAttribute("curUsrName")==null){
                 <span>实时金价</span><img src="plug-in/wechat/images/pic12.png" alt="" class="img_01" />
                 <div><a href="/chunjinbao/price_price">	<b id="goldPrice">
                 </b><i>元/克</i></a></div><a href="/chunjinbao/nav_products"><img src="plug-in/wechat/images/pic13.png" alt="" class="img_02" /></a>
-                <a href="wxMainController.do?gold"><time class="time1">昨日收益</time><u class="u1">0.00元</u></a>
-                <a href="wxGoldController.do?gjbGold"><time class="time2">我的金库</time><u class="u2">0.0000元</u></a>
+                <a href="/chunjinbao/nav_gold"><time class="time1">昨日收益</time><u class="u1">0.00元</u></a>
+                <a href="/chunjinbao/gold_mygold"><time class="time2">我的金库</time><u class="u2">0.0000元</u></a>
             </li>
             <li class="home_group_3">
                 <ul>
@@ -148,7 +148,7 @@ if (session.getAttribute("curUsrName")==null){
             </li>
 			<div style="width:85%;margin-bottom:20px;"><img style="margin-top:-4px;" src="plug-in/wechat/images/safe.png" alt="">
 
-			<p style="font-size: 15px;">当前登录用户：<%= userName%></p>
+			<p style="font-size: 15px;">当前登录用户：<%= userTel%></p>
 			</div>
 			<br><br><br><br>
         </ul>
