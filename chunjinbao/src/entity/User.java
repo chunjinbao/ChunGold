@@ -42,6 +42,10 @@ public class User {
 	@Column(name="BIRTHDAY", nullable=true, length=50)
 	private String birthday;
 	
+	//20160317ÐÂÔö
+
+	@Column(name="SHAREID", nullable=true, length=50)
+	private String shareId;
 	
 	
 	public Integer getUserId() {
@@ -127,5 +131,11 @@ public class User {
 	}
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
+	}
+	public String getshareId() {
+		return shareId;
+	}
+	public void setshareId(String shareId) {
+		this.shareId = shareId;
 	}
 }

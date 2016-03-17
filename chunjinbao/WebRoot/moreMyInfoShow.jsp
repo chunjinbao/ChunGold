@@ -10,13 +10,6 @@ if (session.getAttribute("curUsrTel")==null){
 }
 %>
 
-
-
-
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -61,7 +54,7 @@ function cancle(){
                     	width="60" height="60">
                     <!-- 	<input type="file" onchange = "asas()" accept="image/*;capture=camera"  id="file"  name="file"> -->
                     	</li>
-                    <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;"><%= userTel %>></span>
+                    <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;"><%= userTel %></span>
                     <input name="headImg" id="headImg" type="hidden" value="" />
                     </li>
                     <li><b>用户名</b><input type="text" id="realName" value="" name="realName"  readonly="readonly"></li>

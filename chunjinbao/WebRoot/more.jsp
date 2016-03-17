@@ -3,9 +3,9 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
-String userName=null;
+String curUsrTel=null;
 if (session.getAttribute("curUsrTel")!=null){
-    userName = session.getAttribute("curUsrTel").toString();
+	curUsrTel = session.getAttribute("curUsrTel").toString();
 }
 %>
 
@@ -68,7 +68,7 @@ if (session.getAttribute("curUsrTel")!=null){
                 
                 <li><a href="wxMoreController.do?askAnswer"><span><img src="plug-in/wechat/images/icon8.png" width="10"></span><i><img src="plug-in/wechat/images/icon12.png"></i>&nbsp;<em>理财问答</em></a></li>
                 <li><a href="wxMoreController.do?aboutUs"><span><img src="plug-in/wechat/images/icon8.png" width="10"></span><i><img src="plug-in/wechat/images/icon13.png"></i>&nbsp;<em>关于我们</em></a></li>
-                <div class="login_out"><a href="javascript:comLoginOut();">退出登录</a></div>
+                <div id="logou" class="login_out"><a href="javascript:comLoginOut();">退出登录</a></div>
             </ul>
         </div>
         
@@ -94,11 +94,14 @@ if (session.getAttribute("curUsrTel")!=null){
     </section>
     
 <script type="text/javascript">
-var userName=<%=userName%>;
+var curUsrTel=<%=curUsrTel%>;
 
 $(function (){
-	if(userName!=null)
-		$("#nameId").html(userName);
+	if(curUsrTel!=null)
+		$("#nameId").html(curUsrTel);
+	else{
+		$("#logou").hide();
+	}
 });
 
 //退出登录
@@ -126,7 +129,7 @@ function sessionLogout(){
 			}
 		},
 		error:function(){
-// 			megs('网络异常');
+ 			megs('网络异常');
 		}
 	});
 }	

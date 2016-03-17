@@ -108,19 +108,19 @@ if (session.getAttribute("curUsrTel")==null){
             <li class="home_group_1">
                 <ul>
                     <li><a href="wxExperController.do?gjbExperBalance"><img src="plug-in/wechat/images/pic10.png" alt=""><span>新手专享</span><b>30克特权黄金</b></a></li>
-                    <li><a href="wxMoreCenterController.do?share"><img src="plug-in/wechat/images/pic11.png" alt=""><span style="color:#ff7e3a;">邀请好友</span><b>成功邀请送现金</b></a></li>
+                    <li><a href="/chunjinbao/user_share"><img src="plug-in/wechat/images/pic11.png" alt=""><span style="color:#ff7e3a;">邀请好友</span><b>成功邀请送现金</b></a></li>
                 </ul>  
             </li>
 			<li class="home_group_2">
                 <span>实时金价</span><img src="plug-in/wechat/images/pic12.png" alt="" class="img_01" />
                 <div><a href="/chunjinbao/price_price">	<b id="goldPrice">
                 </b><i>元/克</i></a></div><a href="/chunjinbao/nav_products"><img src="plug-in/wechat/images/pic13.png" alt="" class="img_02" /></a>
-                <a href="wxMainController.do?gold"><time class="time1">昨日收益</time><u class="u1">0.00元</u></a>
-                <a href="wxGoldController.do?gjbGold"><time class="time2">我的金库</time><u class="u2">0.0000元</u></a>
+                <a href="/chunjinbao/nav_gold"><time class="time1">昨日收益</time><u class="u1">0.00元</u></a>
+                <a href="/chunjinbao/gold_mygold"><time class="time2">我的金库</time><u class="u2">0.0000元</u></a>
             </li>
             <li class="home_group_3">
                 <ul>
-                    <a href="wxOrderCurrentController.do?toBuyCurrent">
+                    <a href="/chunjinbao/user_share">
                     <li class="li_l">
                         <img src="plug-in/wechat/images/pic14.png" alt=""><span>随买随卖，灵活投资</span><b class="first">2.50%</b>
                         <!-- <ol>
@@ -132,7 +132,7 @@ if (session.getAttribute("curUsrTel")==null){
                         <!-- <i>%</i> -->
                     </a>
                     </li>
-                     <a href="wxMainController.do?products">
+                     <a href="/chunjinbao/nav_products">
                     <li class="li_r">
                         <img src="plug-in/wechat/images/pic15.png" alt=""><span>定期理财，更高收益</span><b>11.00%</b>
                        <!--  <ol>
@@ -153,7 +153,6 @@ if (session.getAttribute("curUsrTel")==null){
 			<br><br><br><br>
         </ul>
     <nav>
-		<!--åºé¨å¯¼èª-->
         
 		
 <nav>

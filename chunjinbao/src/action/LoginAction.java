@@ -36,11 +36,11 @@ public class LoginAction extends ActionSupport{
 		}else{
 			HttpSession session = ServletActionContext.getRequest().getSession();
 			
-			
 			session.setAttribute("curUsrTel", dbUser.getTel());
 			
 			session.setAttribute("userName", dbUser.getUserName());
 			
+			session.setAttribute("shareId", dbUser.getshareId());
 			
 		}
 		return Action.SUCCESS;
