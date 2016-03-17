@@ -49,6 +49,11 @@
        		<result name="success">/success.jsp</result>
        		<result name="product_list">/products.jsp</result>
        </action>
+       
+       <action name="order_*" class="action.OrderAction" method="{1}">
+       		<result name="success">/success.jsp</result>
+       		<result name="tobuycurrent">/toBuyCurrent.jsp</result>
+       </action>
 
     </package>
     
