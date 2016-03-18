@@ -1,19 +1,21 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <METAHTTP-EQUIV="Pragma"CONTENT="no-cache">
 <METAHTTP-EQUIV="Cache-Control"CONTENT="no-cache">
 <METAHTTP-EQUIV="Expires"CONTENT="0">
-<title>购金宝</title>
+<title>设置密码</title>
+<METAHTTP-EQUIV="Pragma"CONTENT="no-cache">
+<METAHTTP-EQUIV="Cache-Control"CONTENT="no-cache">
+<METAHTTP-EQUIV="Expires"CONTENT="0">
 <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="format-detection" content="telephone=no">
@@ -25,22 +27,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" type="text/css" href="plug-in/html5prompt/css/ns-style-bar.css" />
 <script src="plug-in/html5prompt/js/modernizr.custom.js"></script>
 <script src="plug-in/html5prompt/js/promptBox.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
 </head>
+
 <body>
 	<section class="warp">
-        <div class="login">
+    
+        <div class="reg">
         	<div class="logo"><img src="plug-in/wechat/images/logo.png" alt=""></div>
-        	<form name="form" id="form" action="<s:url action='login_login'/>" method="post">
+        	<form id="form" action="<s:url action='login_register'/>" method="post">
             	<ul>
-                	<li><input name="user.tel" id="userName" type="tel" value="" placeholder="请输入手机号"></li>
-                    <li><input name="user.password" id="password" type="password" placeholder="请输入密码"></li>
-                    <li><a href="javascript:submitFrom();">登 录</a></li>
-                    <li><a href="<s:url action='login_register'/>"><span>注册新用户</span></a></li>
-                    <li><a href="wxSafeController.do?mymodifyLoginPassword&type=3" class="fr">忘记密码？</a></li>
+                	<li><input id="psw" name="psw" type="password" placeholder="请输入登录密码"></li>
+                	<li><input type="hidden"></li>
+                    <li><input id="repsw" name="repsw" type="password" placeholder="请确认登陆密码"></li>
+                    <li><a>密码是由6-16位字符组成，同时区分大小写</a></li>
+                    <li><input id="invitecode" name="invitecode" type="text" placeholder="请输入邀请码（可选）"></li>
+                    
+                    <li><a href="javascript:submitFrom();">注册</a></li>
                 </ul>
             </form>
+            
         </div>
-	<nav>
+		
+       <nav>
 		<!--底部导航-->
         
 		
@@ -54,51 +66,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </nav>
 
 		<!--end底部导航-->
-    </nav>
+      </nav>
     </section>
-    <script src="plug-in/html5prompt/js/classie.js"></script>
-	<script src="plug-in/html5prompt/js/notificationFx.js"></script>
-	<script>
-	
-	var msg="";
-	
-	//手机号码正则
-	var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+    		<script src="plug-in/html5prompt/js/classie.js"></script>
+		<script src="plug-in/html5prompt/js/notificationFx.js"></script>
+		<script>
 
-	if(msg)
+		//提交表单
+		function submitFrom()
 		{
-		alert("");
-		}
-	
-	
-	function submitFrom()
-	{
-		var sub = true;
-		
-		if(!myreg.test($("#userName").val())){
-			//提示
-			alert("您的手机格式不对，请检查你的手机！");
 			
-			sub = false;
-		}
-		
-		if($("#userName").val() == ""){
-			alert("用户不能为空!");
-			
-			sub = false;
-		}
-		
-		if($("#password").val() == ""){
-			alert("密码不能为空!");
-			
-			sub = false;
-		}
+			var sub = true;
+			var tem = true;
+			var pwd = document.getElementById('psw').value;
+			if(pwd.length>16 || pwd.length<6){
+				$("#psw").focus();
+				alert("密码长度不符合要求");
+				sub = false;
+				tem = false;
+			}
+            // 需要进行一部ajax验证
+			if(tem && $("#psw").String != $("#repsw")){
+				$("#repsw").focus();
+				alert("两次输入的密码不一致");
+				sub = false;
+			}
 
-		if(sub){
-			$("#form").submit();
+
+			if(sub){
+				$("#form").submit();
+			}	
+			
 		}
 		
-	}
-	</script>
+		
+		
+		</script>
 </body>
 </html>

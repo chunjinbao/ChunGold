@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             
         </div>
 		<ul>
-              <li><a href="wxLoginController.do?login"><span style="font-size: 14px;float: right;margin-right: 15px;">已有账号？直接登录</span></a></li>
+              <li><a href="/chunjinbao/user_userDetail"><span style="font-size: 14px;float: right;margin-right: 15px;">已有账号？直接登录</span></a></li>
         </ul>
         
        <nav>
