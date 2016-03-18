@@ -39,7 +39,6 @@ String productName = request.getParameter("productName");
             <input type="hidden" id="goldprice" name="goldprice" value="263.3">
             <div align="center" style="padding-top: 15px;font-size:16px;color:#ff7200;">
 
-            	<%= productName %>>
 
             	<s:property value="product.productDetail"/>，享年化收益：<s:property value="product.productProfit"/>%
 
