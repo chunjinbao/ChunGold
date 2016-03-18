@@ -7,11 +7,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
 import service.UserService;
+import Util.GetGoldPrice;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -37,9 +40,8 @@ public class UserAction extends ActionSupport{
 	}
 	
 	public String moreMyInfoEditor(){
-//		HttpSession session = ServletActionContext.getRequest().getSession();
-//		user = userService.findUserByTel((String) session.getAttribute("curUsrTel"));
-		user = userService.findUserByTel("15012341231");
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		user = userService.findUserByTel((String) session.getAttribute("curUsrTel"));
 		
 		return "userDetailEdit";
 	}

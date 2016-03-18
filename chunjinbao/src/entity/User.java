@@ -46,6 +46,8 @@ public class User {
 
 	@Column(name="SHAREID", nullable=true, length=50)
 	private String shareId;
+	@Column(name="SHAREIDCOUNT", nullable=true, length=50)
+	private String shareIdCount;
 	@Column(name="HEADPORTRAIT", nullable=true, length=200)
 	private String headPortrait;
 	
@@ -151,5 +153,11 @@ public class User {
 	}
 	public void setHeadPortrait(String headPortrait) {
 		this.headPortrait = headPortrait;
+	}
+	public String getShareIdCount() {
+		return shareIdCount;
+	}
+	public void setShareIdCount(String shareIdCount) {
+		this.shareIdCount = shareIdCount;
 	}
 }

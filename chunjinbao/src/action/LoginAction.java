@@ -2,6 +2,7 @@ package action;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -19,9 +20,14 @@ public class LoginAction extends ActionSupport{
 	private User user;
 	private UserService userService;
 	
+	public String preRegister(){
+		
+		return "regNext";
+	}
+	
 	public String register(){
 		if(user==null){
-			return Action.LOGIN;
+			return "reg";
 		}else{
 			userService.register(user);
 			
@@ -49,9 +55,7 @@ public class LoginAction extends ActionSupport{
 	}
 	public void logout(){
 		HttpSession session = ServletActionContext.getRequest().getSession();
-		session.removeAttribute("curUsrTel");
-		
-		session.removeAttribute("userName");
+		session.invalidate();
 		
 		HttpServletResponse response = ServletActionContext.getResponse(); 
 
@@ -60,7 +64,23 @@ public class LoginAction extends ActionSupport{
 		try {
 			response.getWriter().write("ok");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void checkTel(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		User dbUser = userService.findUserByTel(request.getParameter("tel"));
+		HttpServletResponse response = ServletActionContext.getResponse(); 
+
+		response.setContentType("text/plain;charset=UTF-8");
+		try {
+			if(dbUser==null){
+				response.getWriter().write("ok");
+			}else{
+				response.getWriter().write("error");
+			}
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
