@@ -3,6 +3,7 @@ package dao.impl;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -15,13 +16,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void register(User user) {
-		// TODO Auto-generated method stub
 		this.getCurrentSession().saveOrUpdate(user);
 	}
 
 	@Override
 	public User findUserByTel(String tel) {
-		// TODO Auto-generated method stub
 		Criteria criteria = this.qryCurrentSession().createCriteria(User.class);
 		criteria.add(Restrictions.eq("tel", tel));
 		List<User> list=criteria.list();
@@ -30,6 +29,17 @@ public class UserDaoImpl implements UserDao {
 			return null;
 		else
 			return list.get(0);
+	}
+	
+	@Override
+	public void update(User user) {
+		Query query = this.getCurrentSession().createQuery("update User u set u.email = ?,u.userName = ?,u.sex = ?,u.birthday = ? where u.userId = ?");  
+		query.setParameter(0, user.getEmail());
+		query.setParameter(1, user.getUserName());
+		query.setParameter(2, user.getSex());
+		query.setParameter(3, user.getBirthday());
+		query.setParameter(4, user.getUserId());
+	    query.executeUpdate();
 	}
 
 	public SessionFactory getSessionFactory() {
@@ -47,4 +57,5 @@ public class UserDaoImpl implements UserDao {
     public Session qryCurrentSession() {
         return sessionFactory.openSession();// 查询使用的session
     }
+
 }

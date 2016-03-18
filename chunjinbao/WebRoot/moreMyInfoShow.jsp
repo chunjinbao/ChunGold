@@ -45,9 +45,9 @@ function cancle(){
 	<section class="warp">
     	<div class="edit_information">
             <form id="form1" name="form1" method="post">
-            <input type="hidden" id="mobileId"   value="15521096419" name="mobile" readonly="readonly">
+            <input type="hidden" id="mobileId"   value="" name="mobile" readonly="readonly">
                 <ul>
-                    <li> <a href="/chunjinbao/moreMyInfoEditor" ><span style="color:#acacac ;font-size:14px;margin-right: 10px;">点击修改</span> </a>
+                    <li> <a href="/chunjinbao/user_moreMyInfoEditor" ><span style="color:#acacac ;font-size:14px;margin-right: 10px;">点击修改</span> </a>
                     	<img id="avatarId"
                     	
                     	 src="plug-in/wechat/images/pic2.jpg" 
@@ -60,13 +60,8 @@ function cancle(){
                     <li><b>用户名</b><input type="text" id="realName" value="" name="realName"  readonly="readonly"></li>
                     <li><b>电子邮箱</b><input type="email" id="email" value="" name="email" readonly="readonly"></li>
                     <li><b>性别</b>
-                    				 	
-                    				 	
-                    				 	
-                    				 		<input type="text" name="sex"  value="--"  id="sex" readonly="readonly">
-                    				 	
-                    			  
-                     </li>
+                    	<input type="text" name="sex"  value="--"  id="sex" readonly="readonly">
+                    </li>
                     <li><b>出生日期</b><input type="text" name="birthDate"  style="background: none;" value=""   id="birthDate" readonly="readonly"> </li>
                     <li>
                     </li>
@@ -82,7 +77,7 @@ function cancle(){
     	<li><a href="/chunjinbao/nav_index" ><i class="n1"></i>首页</a></li>
         <li><a href="/chunjinbao/nav_products" ><i class="n2"></i>淘金</a></li>
         <li><a href="/chunjinbao/nav_gold" ><i class="n3"></i>金库</a></li>
-        <li><a href="/chunjinbao/nav_more"  class="active"><i class="n4"></i>我的</a></li>
+        <li><a href="/chunjinbao/nav_more" class="active"><i class="n4"></i>我的</a></li>
     </ul>
 </nav>
 

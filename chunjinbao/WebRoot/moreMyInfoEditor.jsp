@@ -1,15 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-
-
-
-
-
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -47,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		//两兆 = 2097152字节  2048千字节
 		//三兆= 3145728字节 3072千字节
 		if(file.size > 3145728){ //大于两兆 
-			megs("图片不能超过3M,请重新选择");
+			alert("图片不能超过3M,请重新选择");
 			return;
 		}
 		if (file){
@@ -60,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							$("#avatarId").attr("src",img.src);
 						};
 				 }else{
-					  megs("图片格式不对,请重新选择");
+					  alert("图片格式不对,请重新选择");
 					  return;
 				 }
 		  }
@@ -78,13 +72,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<section class="warp">
     	<div class="edit_information">
-            <form id="form1" action="wxMoreCenterController.do?moreMyInfoEditors" name="form1" method="post" enctype="multipart/form-data">
-            	<input type="hidden" id="mobileId" value="15521096419" name="mobile" readonly="readonly">
+            <form id="form1" action="<s:url action='user_moreMyInfoEdit'/>" name="form1" method="post" enctype="multipart/form-data">
+            	<input type="hidden" id="mobileId" value="" name="mobile" readonly="readonly">
                 <ul>
                     <li><span style="color:#acacac ;font-size:14px">更改头像</span>
                     	 <img id="avatarId" 
-                    	
-                    	
                     	 src="plug-in/wechat/images/pic2.jpg" 
                     	width="60" height="60"> 
                     	<input type="file"  accept="image/gif,image/png,image/jpeg" id="file" name="file">
@@ -92,15 +84,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <!-- 	<input type="file" onchange = "asas()" accept="image/*;capture=camera"  id="file"  name="file"> -->
                     	</li>
                     </li>
-                    <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;">155****6419</span>
+                    <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;" name="userTel"><s:property value="user.tel"/></span>
                     <input name="headImg" id="headImg" type="hidden" value="" />
                     <input name="my_birthDate" value="" type="hidden" id="my_birthDate">
-                    <input name="id" id="id" type="hidden" value="15521096419" />
+                    <input name="user.userId" id="userId" type="hidden" value="<s:property value="user.userId"/>" />
                     </li>
-                    <li><b>用户名</b><input type="text" id="realName" value="" name="realName" placeholder="昵称"></li>
-                    <li><b>电子邮箱</b><input type="email" id="email" value="" name="email" placeholder="电子邮箱"></li>
-                    <li><b>性别</b><select name="sex" id="sex"><option value="0"  >男</option><option value="1" >女</option></select></li>
-                    <li><b>出生日期</b><input type="date" name="birthDate" value=""  id="birthDate"> </li>
+                    <li><b>用户名</b><input type="text" id="realName" value="<s:property value="user.userName"/>" name="user.userName" placeholder="昵称"></li>
+                    <li><b>电子邮箱</b><input type="email" id="email" value="<s:property value="user.email"/>" name="user.email" placeholder="电子邮箱"></li>
+                    <li><b>性别</b><s:select name="user.sex" list="#{'0':'男','1':'女'}" label="" headerKey="" headerValue="请选择性别"></s:select></li>
+                    <li><b>出生日期</b><input type="date" name="user.birthday" value="<s:property value="user.birthday"/>"  id="birthDate" > </li>
                     <li>
                     </li>
                     
@@ -154,16 +146,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           var reg= /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;   
           if(email || !email==""){//如果输入email 不为空 
             if(!reg.test(email)){
-            	megs("邮箱格式不对");
+            	alert("邮箱格式不对");
             	flag= false;
             }
           }
           var v_birthDate =$('#birthDate').val();
-	      $("#my_birthDate").val(v_birthDate);
+// 	      $("#my_birthDate").val(v_birthDate);
 	      if(flag){
 	          $("#form1").submit();
 	      }else{
-	    	  megs("网络异常,请稍后再试!!!");    
+	    	  alert("网络异常,请稍后再试!!!");    
 	      }
        
     }

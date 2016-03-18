@@ -37,7 +37,7 @@ public class User {
 	private String userName;
 	@Column(name="EMAIL", nullable=true, length=50)
 	private String email;
-	@Column(name="SEX", nullable=true, length=50)
+	@Column(name="SEX", nullable=true, length=1)
 	private String sex;
 	@Column(name="BIRTHDAY", nullable=true, length=50)
 	private String birthday;

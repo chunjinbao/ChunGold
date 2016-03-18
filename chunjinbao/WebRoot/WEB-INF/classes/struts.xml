@@ -22,6 +22,7 @@
         
         <action name="user_*" class="userAction" method="{1}">  
        		<result name="userDetail">/moreMyInfoShow.jsp</result>
+       		<result name="userDetailEdit">/moreMyInfoEditor.jsp</result>
        		<result name="share">/share.jsp</result>
        		<interceptor-ref name="mydefault" />
        	</action>

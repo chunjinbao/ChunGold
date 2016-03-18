@@ -52,7 +52,7 @@ String productName = request.getParameter("productName");
             </div>
             <div class="regularly_buy_con">
             	<div class="con" id="tab1">
-            	<form id="buyCurrentForm" name="buyCurrentForm" action="<s:url action='order_insertOrder' />?productId=<%=productId%>" method="post">
+            	<form id="buyCurrentForm0" name="buyCurrentForm" action="<s:url action='order_insertOrder' />?productId=<%=productId%>" method="post">
                 	<ul>
                     	<li>
                         	<span>购买金价</span>
@@ -67,8 +67,7 @@ String productName = request.getParameter("productName");
                     	<input name="agree1" type="checkbox" value="" id="agree1" class="check" checked>
                         <label for="agree1"><em>我已阅读并同意<a href="wxHelpController.do?agreement">《购金宝服务协议》</a></em></label>
                     </div>
-                    <div class="next"><a href="javascript:submitForm();">下一步</a></div>
-                    <input type="submit" value="Next" />
+                    <div class="next"><a href="javascript:submitForm0();">下一步</a></div>
                     <div class="regularly_buy_info">
                     	<p>温馨提示</p>
                         <p>1、一元起购，随买随卖；</p>
@@ -79,7 +78,7 @@ String productName = request.getParameter("productName");
             	</form>
                 </div>
                 <div class="con" id="tab2">
-                <form id="buyCurrentForm" name="buyCurrentForm" action="<s:url action='order_insertOrder' />?productId=<%=productId%>" method="post">
+                <form id="buyCurrentForm1" name="buyCurrentForm" action="<s:url action='order_insertOrder' />?productId=<%=productId%>" method="post">
                 	<ul>
                     	<li>
                         	<span>购买金价</span>
@@ -94,8 +93,7 @@ String productName = request.getParameter("productName");
                     	<input name="agree2" type="checkbox" value="" id="agree2" class="check" checked>
                         <label for="agree2"><em>我已阅读并同意<a href="wxHelpController.do?agreement">《购金宝服务协议》</a></em></label>
                     </div>
-                    <div class="next"><a href="javascript:submitForm();">下一步</a></div>
-                    <input type="submit" value="Next" />
+                    <div class="next"><a href="javascript:submitForm1();">下一步</a></div>
                     <div class="regularly_buy_info">
                         <p>温馨提示</p>
                         <p>1、一元起购，随买随卖；</p>
@@ -107,10 +105,12 @@ String productName = request.getParameter("productName");
                 </div>
             </div>
             <script type="text/javascript">
-            	function submitForm(){
-            		$("#buyCurrentForm").submit();
+            	function submitForm0(){
+            		$("#buyCurrentForm0").submit();
             	}
-            
+            	function submitForm1(){
+            		$("#buyCurrentForm1").submit();
+            	}
         		function toLoadTitle(){
         			$("#count1").val('');
         			$("#count2").val('');

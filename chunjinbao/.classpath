@@ -18,12 +18,6 @@
 			<attribute name="owner.project.facets" value="jst.web.jstl"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.struts_2.1">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="WEB-INF/lib"/>
-			<attribute name="owner.project.facets" value="web.struts2"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.spring_3.1">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="WEB-INF/lib"/>
@@ -34,6 +28,11 @@
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="WEB-INF/lib"/>
 			<attribute name="owner.project.facets" value="me.hibernate"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.struts_2.1">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jdbc-mysql-v3.1.14.jar"/>
