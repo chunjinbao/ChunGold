@@ -46,6 +46,8 @@ public class User {
 
 	@Column(name="SHAREID", nullable=true, length=50)
 	private String shareId;
+	@Column(name="HEADPORTRAIT", nullable=true, length=200)
+	private String headPortrait;
 	
 	
 	public Integer getUserId() {
@@ -137,5 +139,17 @@ public class User {
 	}
 	public void setshareId(String shareId) {
 		this.shareId = shareId;
+	}
+	public String getShareId() {
+		return shareId;
+	}
+	public void setShareId(String shareId) {
+		this.shareId = shareId;
+	}
+	public String getHeadPortrait() {
+		return headPortrait;
+	}
+	public void setHeadPortrait(String headPortrait) {
+		this.headPortrait = headPortrait;
 	}
 }
