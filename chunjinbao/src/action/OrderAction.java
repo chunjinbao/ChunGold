@@ -6,17 +6,23 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import service.OrderService;
+import service.ProductService;
 import Util.GetGoldPrice;
 import entity.Order;
+import entity.Product;
 
 public class OrderAction {
 	private Order order;
+	private Product product;
 	private OrderService orderService;
+	private ProductService productService;
 	public String startOrder() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-//		System.out.println(request.getParameter("productId"));
+//		System.out.println(Integer.parseInt(request.getParameter("productId")));
 //		request.getParameter("productId");
 //		orderService.insertOrder(order);
+		product = productService.queryByProductId(Integer.parseInt(request.getParameter("productId")));
+		System.out.println("Here.");
 		return "tobuycurrent";
 	}
 	
@@ -44,6 +50,22 @@ public class OrderAction {
 		
 	}
 	
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public ProductService getProductService() {
+		return productService;
+	}
+
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
+	}
+
 	public Order getOrder() {
 		return order;
 	}
