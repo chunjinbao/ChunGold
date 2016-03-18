@@ -8,14 +8,17 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	@Override
 	public void register(User user) {
-		// TODO Auto-generated method stub
 			this.userDao.register(user);
 	}
 
 	@Override
 	public User findUserByTel(String tel) {
-		// TODO Auto-generated method stub
 		return this.userDao.findUserByTel(tel);
+	}
+	
+	@Override
+	public void update(User user) {
+		this.userDao.update(user);
 	}
 
 	public UserDao getUserDao() {

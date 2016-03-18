@@ -95,7 +95,8 @@
     	<property name="orderDao" ref="orderDao" />
     </bean> 
     
-    <bean id="userAction" class="action.UserAction" scope="prototype">  
+    <bean id="userAction" class="action.UserAction" scope="prototype">
+    	<property name="userService" ref="userService"></property>
     </bean>
     
     <bean id="utilAction" class="action.UtilAction" scope="prototype">  
@@ -106,7 +107,7 @@
     </bean>
     
     <bean id="loginAction" class="action.LoginAction" scope="prototype">  
-        <property name="userService" ref="userService"></property>  
+        <property name="userService" ref="userService"></property>
     </bean>
     
     <bean id="priceAction" class="action.PriceAction" scope="prototype">
