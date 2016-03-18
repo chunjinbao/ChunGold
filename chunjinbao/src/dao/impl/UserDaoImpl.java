@@ -33,12 +33,13 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public void update(User user) {
-		Query query = this.getCurrentSession().createQuery("update User u set u.email = ?,u.userName = ?,u.sex = ?,u.birthday = ? where u.userId = ?");  
+		Query query = this.getCurrentSession().createQuery("update User u set u.email = ?,u.userName = ?,u.sex = ?,u.birthday = ?,u.headPortrait = ? where u.userId = ?");  
 		query.setParameter(0, user.getEmail());
 		query.setParameter(1, user.getUserName());
 		query.setParameter(2, user.getSex());
 		query.setParameter(3, user.getBirthday());
-		query.setParameter(4, user.getUserId());
+		query.setParameter(4, user.getHeadPortrait());
+		query.setParameter(5, user.getUserId());
 	    query.executeUpdate();
 	}
 

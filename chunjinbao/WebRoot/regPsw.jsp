@@ -1,9 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -40,11 +40,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="logo"><img src="plug-in/wechat/images/logo.png" alt=""></div>
         	<form id="form" action="<s:url action='login_register'/>" method="post">
             	<ul>
-                	<li><input id="psw" name="psw" type="password" placeholder="请输入登录密码"></li>
+                	<li><input id="" name="user.tel" type="hidden" value="<s:property value="user.tel"/>"><input id="psw" name="user.password" type="password" placeholder="请输入登录密码"></li>
                 	<li><input type="hidden"></li>
                     <li><input id="repsw" name="repsw" type="password" placeholder="请确认登陆密码"></li>
                     <li><a>密码是由6-16位字符组成，同时区分大小写</a></li>
-                    <li><input id="invitecode" name="invitecode" type="text" placeholder="请输入邀请码（可选）"></li>
+                    <li><input id="invitecode" name="user.shareId" type="text" placeholder="请输入邀请码（可选）"></li>
                     
                     <li><a href="javascript:submitFrom();">注册</a></li>
                 </ul>
@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				tem = false;
 			}
             // 需要进行一部ajax验证
-			if(tem && $("#psw").String != $("#repsw")){
+			if(tem && $("#psw").val() != $("#repsw").val()){
 				$("#repsw").focus();
 				alert("两次输入的密码不一致");
 				sub = false;

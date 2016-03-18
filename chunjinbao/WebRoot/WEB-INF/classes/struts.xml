@@ -20,11 +20,12 @@
             <result name="login">/login.jsp</result>  
         </global-results>
         
-        <action name="user_*" class="userAction" method="{1}">  
+        <action name="user_*" class="userAction" method="{1}">
+        	<param name="savePath_images">/headPortraits</param>  
        		<result name="userDetail">/moreMyInfoShow.jsp</result>
        		<result name="userDetailEdit">/moreMyInfoEditor.jsp</result>
        		<result name="share">/share.jsp</result>
-       		<interceptor-ref name="mydefault" />
+       		<interceptor-ref name="mydefault"/>
        	</action>
        	
        	<action name="util_*" class="utilAction" method="{1}">  
@@ -40,7 +41,8 @@
        
        	<action name="login_*" class="loginAction" method="{1}">
        		<result name="success" type="redirectAction">user_userDetail</result>
-       		<result name="login">/reg.jsp</result>
+       		<result name="reg">/reg.jsp</result>
+       		<result name="regNext">/regPsw.jsp</result>
 	   	</action>
        
        <action name="price_*" class="priceAction" method="{1}"> 
@@ -70,7 +72,6 @@
        		<result name="success">/success.jsp</result>
        		<result name="tobuycurrent">/toBuyCurrent.jsp</result>
        </action>
-
 
     </package>
     

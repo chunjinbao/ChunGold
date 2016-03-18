@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
         <div class="reg">
         	<div class="logo"><img src="plug-in/wechat/images/logo.png" alt=""></div>
-        	<form id="form" action="<s:url action='login_register'/>" method="post">
+        	<form id="form" action="<s:url action='login_preRegister'/>" method="post">
             	<ul>
                 	<li><input id="userName" name="user.tel" type="tel" placeholder="请输入手机号码"></li>
                     <li><input name="codeNum" id="codeNum" type="tel" placeholder="请输入验证码">
@@ -85,34 +85,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		//手机号码正则
 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
 		function sendMessage() {
+			$.ajax({
+			    type:"POST",
+			    url:"/chunjinbao/login_checkTel",
+			    dataType:"text",
+			    data:{
+			    	tel : $("#userName").val()
+			    },
+			    success:function(result){
+			    	if(result=="error"){
+			   			alert("手机号已被注册！");
+			    		return ;
+			   		}
+			    },
+			    error:function(msg){}
+			});
+			
 			if(!myreg.test($("#userName").val())){
 				//提示
-				megs("您的手机格式不对，请检查你的手机！");
+				alert("您的手机格式不对，请检查你的手机！");
 			}else{
 				this.sendMessagesTrim();
 				 //AJAX返回随机数验证码
 				 $.getJSON("wxLoginController.do?msm&userName="+$("#userName").val(),function(result){
-					 
 					 if(result)
 						 {
-					
 						 if(result.msg)
 						{
-							 
-							 
 							 megs(result.msg);
 							 endf();
-							 
 						}
 						 else
 							 {
 							 phoneNum = result.phoneNum;
 							 }
-						 
-						 
-						 
 						 }
-					 
 				 });
 			}
 		}
@@ -154,60 +161,73 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		//提交表单
 		function submitFrom()
 		{
-			
-			var sub = true;
-			
-			//验证码判断是否为空
-// 			if($("#codeNum").val() == ""){
-				
-// 				$("#codeNum").focus();
-				
-// 				alert("验证码不能为空!");
-				
-// 				sub = false;
-				
-// 			}
-			//手机判断
-			if(!myreg.test($("#userName").val())){
-				$("#userName").focus();
-				alert("手机格式不对!");
-				sub = false;
-			}
-			//判断验证码时间是否过期
-			
-			
-			
-// 			if($("#time").val() == 1){
-// 				alert("你的验证码以过期!");
-// 				sub = false;
-				
-// 			}
-			
-			//判断是否同意协议
+			$.ajax({
+			    type:"POST",
+			    url:"/chunjinbao/login_checkTel",
+			    dataType:"text",
+			    data:{
+			    	tel : $("#userName").val()
+			    },
+			    success:function(result){
+			    	if(result=="error"){
+			   			alert("手机号已被注册！");
+			    		return ;
+			   		}else{
+			   			var sub = true;
+						
+						//验证码判断是否为空
+//			 			if($("#codeNum").val() == ""){
+							
+//			 				$("#codeNum").focus();
+							
+//			 				alert("验证码不能为空!");
+							
+//			 				sub = false;
+							
+//			 			}
+						//手机判断
+						if(!myreg.test($("#userName").val())){
+							$("#userName").focus();
+							alert("手机格式不对!");
+							sub = false;
+						}
+						//判断验证码时间是否过期
+						
+						
+						
+//			 			if($("#time").val() == 1){
+//			 				alert("你的验证码以过期!");
+//			 				sub = false;
+							
+//			 			}
+						
+						//判断是否同意协议
 
+						
+						if($("#agree").attr("checked") != "checked"){
+							alert("请选择购金宝协议!");
+							sub = false;
+						}
+						
+						//判断提交时候的手机与获取验证码的手机是否一致
+//			 			if(phoneNum != $("#userName").val()){
+							
+//			 				alert("收到验证手机与注册手机不一致!");
+//			 				sub = false;
+							
+//			 			}
+						
+						
+						if(sub){
+							$("#form").submit();
+						}	
+			   		}
+			    },
+			    error:function(msg){}
+			});
 			
-			if($("#agree").attr("checked") != "checked"){
-				alert("请选择购金宝协议!");
-				sub = false;
-			}
+   		}
 			
-			//判断提交时候的手机与获取验证码的手机是否一致
-// 			if(phoneNum != $("#userName").val()){
-				
-// 				alert("收到验证手机与注册手机不一致!");
-// 				sub = false;
-				
-// 			}
-			
-			
-			if(sub){
-				$("#form").submit();
-			}	
-			
-		}
-		
-		
-		
 		</script>
 </body>
 </html>

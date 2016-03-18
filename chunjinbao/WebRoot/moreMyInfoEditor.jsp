@@ -76,10 +76,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<input type="hidden" id="mobileId" value="" name="mobile" readonly="readonly">
                 <ul>
                     <li><span style="color:#acacac ;font-size:14px">更改头像</span>
-                    	 <img id="avatarId" 
-                    	 src="plug-in/wechat/images/pic2.jpg" 
-                    	width="60" height="60"> 
-                    	<input type="file"  accept="image/gif,image/png,image/jpeg" id="file" name="file">
+	                    <s:if test="%{user.headPortrait == \"1\"}">
+	                    	<img id="avatarId" 
+	                    	 src="plug-in/wechat/images/icon7_01.png" 
+	                    	width="60" height="60">
+						</s:if>
+						<s:else>
+	                    	 <img id="avatarId" 
+	                    	 src="${pageContext.request.contextPath}/headPortraits/<s:property value="user.headPortrait"/>" 
+	                    		width="60" height="60">
+	                    </s:else>
+                    	<input type="file"  accept="image/gif,image/png,image/jpeg" id="file" name="upload">
 						<div id = "result"> </div>
                     <!-- 	<input type="file" onchange = "asas()" accept="image/*;capture=camera"  id="file"  name="file"> -->
                     	</li>
