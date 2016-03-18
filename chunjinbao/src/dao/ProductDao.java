@@ -6,6 +6,6 @@ import entity.Product;
 
 public interface ProductDao {
 	public void insertProduct(Product product);
-	public List<Product> queryByProductName(String name);
+	public List<Product> queryByProductType(Integer productType);
 	public Product queryByProductId(Integer id);
 }

@@ -7,8 +7,10 @@ import entity.Product;
 
 public class NavAction {
 	private Product product;
-	private List<Product> productList;
-	private Integer productNumber;
+	private List<Product> productListHuo;
+	private List<Product> productListDing;
+	private Integer productNumberHuo;
+	private Integer productNumberDing;
 	private ProductService productService;
 	public String insertProduct() throws Exception {
 		productService.insertProduct(product);
@@ -19,33 +21,52 @@ public class NavAction {
 	}
 
 	public String products(){
-		productList = productService.queryByProductName("2000");
-		productNumber = productList.size();
+		productListHuo = productService.queryByProductType(0);
+		productNumberHuo = productListHuo.size();
+
+		productListDing = productService.queryByProductType(1);
+		productNumberDing = productListDing.size();
 		return "products";
 	}
+
+	
+	
+	
 	public Product getProduct() {
 		return product;
 	}
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+	public List<Product> getProductListHuo() {
+		return productListHuo;
+	}
+	public void setProductListHuo(List<Product> productListHuo) {
+		this.productListHuo = productListHuo;
+	}
+	public List<Product> getProductListDing() {
+		return productListDing;
+	}
+	public void setProductListDing(List<Product> productListDing) {
+		this.productListDing = productListDing;
+	}
+	public Integer getProductNumberHuo() {
+		return productNumberHuo;
+	}
+	public void setProductNumberHuo(Integer productNumberHuo) {
+		this.productNumberHuo = productNumberHuo;
+	}
+	public Integer getProductNumberDing() {
+		return productNumberDing;
+	}
+	public void setProductNumberDing(Integer productNumberDing) {
+		this.productNumberDing = productNumberDing;
+	}
 	public ProductService getProductService() {
 		return productService;
 	}
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
-	}
-	public List<Product> getProductList() {
-		return productList;
-	}
-	public void setProductList(List<Product> productList) {
-		this.productList = productList;
-	}
-	public Integer getProductNumber() {
-		return productNumber;
-	}
-	public void setProductNumber(Integer productNumber) {
-		this.productNumber = productNumber;
 	}
 	public String gold(){
 		return "gold";

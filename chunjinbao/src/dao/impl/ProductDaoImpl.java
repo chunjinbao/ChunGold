@@ -33,10 +33,10 @@ public class ProductDaoImpl implements ProductDao {
 	}
 	
 	@Override
-	public List<Product> queryByProductName(String name) {
+	public List<Product> queryByProductType(Integer productType) {
 		// TODO Auto-generated method stub
 		Criteria criteria = this.qryCurrentSession().createCriteria(Product.class);
-//		criteria.add(Restrictions.eq("productName", name));
+		criteria.add(Restrictions.eq("productType", productType));
 		List<Product> list = criteria.list();
 		return list;
 	}

@@ -22,7 +22,6 @@ public class OrderAction {
 //		request.getParameter("productId");
 //		orderService.insertOrder(order);
 		product = productService.queryByProductId(Integer.parseInt(request.getParameter("productId")));
-		System.out.println("Here.");
 		return "tobuycurrent";
 	}
 	

@@ -17,7 +17,7 @@ public class Product {
 	@Column(name="PRODUCTNAME",nullable=true,length=50)
 	private String productName;
 	@Column(name="PRODUCTTYPE",nullable=true,length=50)
-	private String productType;
+	private Integer productType;
 	@Column(name="PRODUCTPROFIT",nullable=true,length=50)
 	private String productProfit;
 	@Column(name="MINMONEY",nullable=true,length=50)
@@ -40,10 +40,10 @@ public class Product {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getProductType() {
+	public Integer getProductType() {
 		return productType;
 	}
-	public void setProductType(String productType) {
+	public void setProductType(Integer productType) {
 		this.productType = productType;
 	}
 	public String getProductProfit() {
@@ -58,12 +58,6 @@ public class Product {
 	public void setMinMoney(String minMoney) {
 		this.minMoney = minMoney;
 	}
-	public String getProductDetail() {
-		return productDetail;
-	}
-	public void setProductDetail(String productDetail) {
-		this.productDetail = productDetail;
-	}
 	public String getInvestPeriod() {
 		return investPeriod;
 	}
@@ -76,16 +70,12 @@ public class Product {
 	public void setTax(String tax) {
 		this.tax = tax;
 	}
-	public Product() {
-		super();
-		this.productId = 105;
-		this.productName = "L";
-		this.productType = "L";
-		this.productProfit = "L";
-		this.minMoney = "L";
-		this.investPeriod = "L";
-		this.tax = "L";
-		this.productDetail = "L";
+	public String getProductDetail() {
+		return productDetail;
 	}
+	public void setProductDetail(String productDetail) {
+		this.productDetail = productDetail;
+	}
+	
 	
 }

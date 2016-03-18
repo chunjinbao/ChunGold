@@ -20,9 +20,9 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.queryByProductId(id);
 	}
 	@Override
-	public List<Product> queryByProductName(String name) {
+	public List<Product> queryByProductType(Integer productType) {
 		// TODO Auto-generated method stub
-		return productDao.queryByProductName(name);
+		return productDao.queryByProductType(productType);
 	}
 	public ProductDao getProductDao() {
 		return productDao;
