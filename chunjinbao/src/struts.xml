@@ -5,7 +5,7 @@
 	   <!-- 定义一个拦截器 -->  
         <interceptors>  
             <interceptor name="authority"  
-                class="intercepto.AuthorityInterceptor">  
+                class="interceptor.AuthorityInterceptor">  
             </interceptor>  
             <!-- 拦截器栈 -->  
             <interceptor-stack name="mydefault">  
