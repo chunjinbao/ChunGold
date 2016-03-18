@@ -52,7 +52,7 @@ if (session.getAttribute("curUsrTel")!=null){
                 -->
                 
                 <li>
-	               <a href="wxMoreCenterController.do?share">
+	               <a href="/chunjinbao/user_share">
 	                  <span id="inviteCodeId" style="line-height: 30px;"><img src="plug-in/wechat/images/icon8.png" width="10"></span>
 	                  <i><img src="plug-in/wechat/images/icon9.png"></i>&nbsp;<em>我的分享</em>
 	               </a>

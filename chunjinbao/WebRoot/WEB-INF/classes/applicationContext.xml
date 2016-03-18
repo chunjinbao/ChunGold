@@ -119,8 +119,15 @@
     <bean id="productAction" class="action.ProductAction" scope="prototype">  
         <property name="productService" ref="productService"></property>  
     </bean>
+
+    <bean id="advertiseAction" class="action.AdvertiseAction" scope="prototype">  
+          
+    </bean>
+    
+
     
     <bean id="orderAction" class="action.OrderAction" scope="prototype">  
         <property name="orderService" ref="orderService"></property>  
     </bean>
+
 </beans>

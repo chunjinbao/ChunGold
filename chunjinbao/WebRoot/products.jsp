@@ -31,21 +31,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<div class="con" id="tab1">
                 	<ul>
                         <p class="regu_text">活期产品</p>
+                        <s:iterator id="product_list" value="productListHuo">
                     	<li>
                         	<dl>
                             	<dt>
-                                	<p>活期金<!-- <img src="images/icon32.png"><img src="images/icon33.png"> --></p>
+                                	<p><s:property value="productName"/><!-- <img src="images/icon32.png"><img src="images/icon33.png"> --></p>
                                 	<p><span>灵活买卖</span><b>方便快捷</b></p>
-                                    <p><i>2.50</i><time>%</time><u>按天结息 随买随卖</u></p>
+                                    <p><i><s:property value="productProfit"/></i><time>%</time><u>按天结息 随买随卖</u></p>
                                 </dt><!--
                              --><dd>
-                                	<p><a href="wxOrderCurrentController.do?toBuyCurrent"><i>买入</i></a></p>
+                                	<p><a href="order_startOrder?productId=<s:property value='productId'/>"><i>买入</i></a></p>
                                 </dd>
                             </dl>
                         </li>
+                        </s:iterator>
                         
                         <p class="regu_text">定期产品</p>
-                        <s:iterator id="product_list" value="productList">
+                        <s:iterator id="product_list" value="productListDing">
                         <li>
                             <dl>
                                 <dt>
@@ -57,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     	</u></p>
                                 </dt><!--
                              --><dd>
-                                    <p><a href="toByCurrent.jsp?productId=<s:property value='productId'/>"><i>买入</i></a></p>
+                                    <p><a href="order_startOrder?productId=<s:property value='productId'/>"><i>买入</i></a></p>
                                 </dd>
                             </dl>
                         </li>

@@ -36,6 +36,8 @@ public class LoginAction extends ActionSupport{
 		}else{
 			HttpSession session = ServletActionContext.getRequest().getSession();
 			
+			session.setAttribute("userId", dbUser.getUserId());
+			
 			session.setAttribute("curUsrTel", dbUser.getTel());
 			
 			session.setAttribute("userName", dbUser.getUserName());

@@ -56,10 +56,21 @@
        		<result name="product_list">/products.jsp</result>
        </action>
        
+
+       <action name="pic_*" class="advertiseAction" method="{1}">
+       		<result name="firstPic">/firstPic.jsp</result>
+            <result name="secondPic">/secondPic.jsp</result>   
+            <result name="thirdPic">/thirdPic.jsp</result>
+            <result name="fourPic">/fourPic.jsp</result>
+            <result name="fivePic">/fivePic.jsp</result>
+
+       	</action>
+
        <action name="order_*" class="action.OrderAction" method="{1}">
        		<result name="success">/success.jsp</result>
        		<result name="tobuycurrent">/toBuyCurrent.jsp</result>
        </action>
+
 
     </package>
     

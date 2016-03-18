@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//WebRoot/firstPic.jsp=UTF-8
+encoding//WebRoot/fourPic.jsp=UTF-8
 encoding//WebRoot/gold.jsp=UTF-8
 encoding//WebRoot/login.jsp=UTF-8
 encoding//WebRoot/more.jsp=UTF-8
@@ -8,4 +10,7 @@ encoding//WebRoot/myGold.jsp=UTF-8
 encoding//WebRoot/price.jsp=UTF-8
 encoding//WebRoot/products.jsp=UTF-8
 encoding//WebRoot/reg.jsp=UTF-8
+encoding//WebRoot/regPsw.jsp=UTF-8
+encoding//WebRoot/secondPic.jsp=UTF-8
 encoding//WebRoot/share.jsp=UTF-8
+encoding//WebRoot/thirdPic.jsp=UTF-8

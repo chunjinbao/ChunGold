@@ -1,7 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String productId=request.getParameter("productId");
+String productName = request.getParameter("productName");
 %>
 
 
@@ -30,14 +33,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body onload="toLoadTitle()">
 	<section class="warp">
-    
         <div class="regularly_buy">            
-            <form id="buyCurrentForm" name="buyCurrentForm" action="<s:url action='user_insertUser' />" method="post">
             <input type="hidden" id="proId" name="proId" value="402880e951771ea201517722f561000a">
             <input type="hidden" id="buy_type" name="buy_type" value="1">
             <input type="hidden" id="goldprice" name="goldprice" value="263.3">
             <div align="center" style="padding-top: 15px;font-size:16px;color:#ff7200;">
-            	随买随卖，享年化收益：2.50%
+
+
+            	<s:property value="product.productDetail"/>，享年化收益：<s:property value="product.productProfit"/>%
+
             </div>
             
             <div class="regularly_buy_tit">
@@ -48,13 +52,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <div class="regularly_buy_con">
             	<div class="con" id="tab1">
+            	<form id="buyCurrentForm0" name="buyCurrentForm" action="<s:url action='order_insertOrder' />?productId=<%=productId%>" method="post">
                 	<ul>
                     	<li>
                         	<span>购买金价</span>
                             <input name="" type="text" placeholder="实时金价" value="263.3 元/克" class="price" readonly="readonly">
                             
                         </li>
-                        <li><span>金额</span><input name="count1" type="number" placeholder="输入购买金额" id="count1" onkeyup="check_input('count1',2);"></li>
+                        <li><span>金额</span><input name="order.tradeAmount" type="number" placeholder="输入购买金额" id="count1" onkeyup="check_input('count1',2);"></li>
                         <li><span>预计克重</span><input name="total1" type="text" placeholder="0.000克"  id="total1" value="0"  readonly="readonly"></li>
                         <li><span>购金券</span><b>暂无购金券可用</b></li>
                     </ul>
@@ -62,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     	<input name="agree1" type="checkbox" value="" id="agree1" class="check" checked>
                         <label for="agree1"><em>我已阅读并同意<a href="wxHelpController.do?agreement">《购金宝服务协议》</a></em></label>
                     </div>
-                    <div class="next"><a href="javascript:void(0);">下一步</a></div>
+                    <div class="next"><a href="javascript:submitForm0();">下一步</a></div>
                     <div class="regularly_buy_info">
                     	<p>温馨提示</p>
                         <p>1、一元起购，随买随卖；</p>
@@ -70,8 +75,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <p>3、买入无任何手续费，黄金卖出手续费为0.35%；</p>
                         <p>4、每人日累计可买入1000克，卖出上限为500克；</p>
                     </div>
+            	</form>
                 </div>
                 <div class="con" id="tab2">
+                <form id="buyCurrentForm1" name="buyCurrentForm" action="<s:url action='order_insertOrder' />?productId=<%=productId%>" method="post">
                 	<ul>
                     	<li>
                         	<span>购买金价</span>
@@ -79,14 +86,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             
                         </li>
                          
-                         <li><span>克重</span><input name="count2" type="number" placeholder="输入购买克重" id="count2" onkeyup="check_input('count2',4);"></li>
+                         <li><span>克重</span><input name="order.tradeNum" type="number" placeholder="输入购买克重" id="count2" onkeyup="check_input('count2',4);"></li>
                         <li><span>预计金额</span><input name="total2" type="text" placeholder="0.000元"  id="total2" value="0"  readonly="readonly"></li>
                     </ul>
                     <div class="regularly_buy_check">
                     	<input name="agree2" type="checkbox" value="" id="agree2" class="check" checked>
                         <label for="agree2"><em>我已阅读并同意<a href="wxHelpController.do?agreement">《购金宝服务协议》</a></em></label>
                     </div>
-                    <div class="next"><a href="javascript:void(0);">下一步</a></div>
+                    <div class="next"><a href="javascript:submitForm1();">下一步</a></div>
                     <div class="regularly_buy_info">
                         <p>温馨提示</p>
                         <p>1、一元起购，随买随卖；</p>
@@ -94,10 +101,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <p>3、买入无任何手续费，黄金卖出手续费为0.35%；</p>
                         <p>4、每人日累计可买入1000克，卖出上限为500克；</p>
                     </div>
+            	</form>
                 </div>
             </div>
-            </form>
             <script type="text/javascript">
+            	function submitForm0(){
+            		$("#buyCurrentForm0").submit();
+            	}
+            	function submitForm1(){
+            		$("#buyCurrentForm1").submit();
+            	}
         		function toLoadTitle(){
         			$("#count1").val('');
         			$("#count2").val('');

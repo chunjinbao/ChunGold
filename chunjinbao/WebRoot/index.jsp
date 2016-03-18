@@ -68,7 +68,6 @@ if (session.getAttribute("curUsrTel")==null){
             
             <!-- banner -->
             <div class="banner">
-                    <!-- è½®æ­ Start -->
                     <div id="focus" class="focus">
                         <div class="hd">
                             <ul><li class=""></li><li class="on"></li><li class=""></li><li class=""></li></ul>
@@ -76,16 +75,11 @@ if (session.getAttribute("curUsrTel")==null){
                         <div class="bd">
                             <div class="tempWrap" style="overflow:hidden; position:relative;">
                                 <ul style="width: 1875px; position: relative; overflow: hidden; padding: 0px; margin: 0px; transition-duration: 400ms; -webkit-transition-duration: 400ms; -webkit-transform: translate(-750px, 0px) translateZ(0px);">
-                                  <li style="display: table-cell; vertical-align: top; width: 375px;"><a href="wxMoreCenterController.do?privilegeGold"><img src="plug-in/wechat/images/pic6_100.jpg"></a></li>
-                                 
-                                 
-                                 
-                                 	<li style="display: table-cell; vertical-align: top; width: 375px;"><a href="wxMoreCenterController.do?adshare" ><img src="plug-in/wechat/images/pic6_1.jpg"></a></li>
-                                  
-
-                                 <li style="display: table-cell; vertical-align: top; width: 375px;"><a href="wxMoreCenterController.do?introduction"><img src="plug-in/wechat/images/pic6_22.jpg"></a></li>
-                                 <li style="display: table-cell; vertical-align: top; width: 375px;"><a href="wxMoreCenterController.do?cooperation"><img src="plug-in/wechat/images/pic6_6.jpg"></a></li>
-                                
+                                  <li style="display: table-cell; vertical-align: top; width: 375px;"><a href="/chunjinbao/pic_firstPic"><img src="plug-in/wechat/images/pic6_100.jpg"></a></li>                                                                  
+                                  <li style="display: table-cell; vertical-align: top; width: 375px;"><a href="/chunjinbao/pic_secondPic" ><img src="plug-in/wechat/images/pic6_1.jpg"></a></li>                                  
+                                  <li style="display: table-cell; vertical-align: top; width: 375px;"><a href="#"><img src="plug-in/wechat/images/pic6_13.jpg"></a></li>
+                                  <li style="display: table-cell; vertical-align: top; width: 375px;"><a href="/chunjinbao/pic_thirdPic"><img src="plug-in/wechat/images/pic6_22.jpg"></a></li>
+                                  <li style="display: table-cell; vertical-align: top; width: 375px;"><a href="/chunjinbao/pic_fourPic"><img src="plug-in/wechat/images/pic6_6.jpg"></a></li>                               
                                     
                                 </ul>
                             </div>
@@ -107,7 +101,7 @@ if (session.getAttribute("curUsrTel")==null){
         <ul>
             <li class="home_group_1">
                 <ul>
-                    <li><a href="wxExperController.do?gjbExperBalance"><img src="plug-in/wechat/images/pic10.png" alt=""><span>新手专享</span><b>30克特权黄金</b></a></li>
+                    <li><a href="/chunjinbao/login_register"><img src="plug-in/wechat/images/pic10.png" alt=""><span>新手专享</span><b>30克特权黄金</b></a></li>
                     <li><a href="/chunjinbao/user_share"><img src="plug-in/wechat/images/pic11.png" alt=""><span style="color:#ff7e3a;">邀请好友</span><b>成功邀请送现金</b></a></li>
                 </ul>  
             </li>
@@ -120,7 +114,7 @@ if (session.getAttribute("curUsrTel")==null){
             </li>
             <li class="home_group_3">
                 <ul>
-                    <a href="/chunjinbao/user_share">
+                    <a href="/chunjinbao/nav_products">
                     <li class="li_l">
                         <img src="plug-in/wechat/images/pic14.png" alt=""><span>随买随卖，灵活投资</span><b class="first">2.50%</b>
                         <!-- <ol>
@@ -164,7 +158,7 @@ if (session.getAttribute("curUsrTel")==null){
     </ul>
 </nav>
 
-		<!--endåºé¨å¯¼èª-->
+		
     </nav>
 		
     </section>
