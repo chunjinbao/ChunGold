@@ -114,7 +114,7 @@ if (session.getAttribute("curUsrTel")==null){
             </li>
             <li class="home_group_3">
                 <ul>
-                    <a href="/chunjinbao/nav_products">
+                    <a href="order_startOrder?productId=<s:property value='0'/>">
                     <li class="li_l">
                         <img src="plug-in/wechat/images/pic14.png" alt=""><span>随买随卖，灵活投资</span><b class="first">2.50%</b>
                         <!-- <ol>
