@@ -18,7 +18,6 @@ public class ProductAction {
 //		productNumber = productService.queryByProductName(product.getProductName(), productList);
 		productList = productService.queryByProductName("2000");
 		productNumber = productList.size();
-		System.out.println(productNumber);
 		return "product_list";
 	}
 	public Product getProduct() {

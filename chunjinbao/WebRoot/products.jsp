@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     	</u></p>
                                 </dt><!--
                              --><dd>
-                                    <p><a href="toButCurrent.jsp?productId=<s:property value='productId'/>"><i>买入</i></a></p>
+                                    <p><a href="order_startOrder?productId=<s:property value='productId'/>"><i>买入</i></a></p>
                                 </dd>
                             </dl>
                         </li>

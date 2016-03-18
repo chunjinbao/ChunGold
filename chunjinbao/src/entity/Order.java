@@ -1,6 +1,7 @@
 package entity;
 
 import java.sql.Time;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,6 +20,8 @@ public class Order {
 	private String tradeNum;
 	@Column(name="TRADEAMOUNT",nullable=true,length=50)
 	private String tradeAmount;
+	@Column(name="TRADEDATE", nullable=true,length=50)
+	private Date tradeDate;
 	@Column(name="TRADETIME",nullable=true,length=50)
 	private Time tradeTime;
 	@Column(name="PAYTYPE",nullable=true,length=50)
@@ -29,5 +32,59 @@ public class Order {
 	private Integer productId;
 	@Column(name="COUPONID",nullable=true,length=50)
 	private Integer couponId;
+	public Integer getOrderId() {
+		return orderId;
+	}
+	public Date getTradeDate() {
+		return tradeDate;
+	} 
+	public void setTradeDate(Date tradeDate) {
+		this.tradeDate = tradeDate;
+	}
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+	public String getTradeNum() {
+		return tradeNum;
+	}
+	public void setTradeNum(String tradeNum) {
+		this.tradeNum = tradeNum;
+	}
+	public String getTradeAmount() {
+		return tradeAmount;
+	}
+	public void setTradeAmount(String tradeAmount) {
+		this.tradeAmount = tradeAmount;
+	}
+	public Time getTradeTime() {
+		return tradeTime;
+	}
+	public void setTradeTime(Time tradeTime) {
+		this.tradeTime = tradeTime;
+	}
+	public String getPayType() {
+		return payType;
+	}
+	public void setPayType(String payType) {
+		this.payType = payType;
+	}
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+	public Integer getProductId() {
+		return productId;
+	}
+	public void setProductId(Integer productId) {
+		this.productId = productId;
+	}
+	public Integer getCouponId() {
+		return couponId;
+	}
+	public void setCouponId(Integer couponId) {
+		this.couponId = couponId;
+	}
 	
 }
