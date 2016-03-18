@@ -14,6 +14,12 @@ public class ProductServiceImpl implements ProductService {
 		this.productDao.insertProduct(product);
 	}
 	@Override
+	public Product queryByProductId(Integer id) {
+		// TODO Auto-generated method stub
+		System.out.println("Here: ProductServiceImpl");
+		return productDao.queryByProductId(id);
+	}
+	@Override
 	public List<Product> queryByProductName(String name) {
 		// TODO Auto-generated method stub
 		return productDao.queryByProductName(name);

@@ -19,6 +19,18 @@ public class ProductDaoImpl implements ProductDao {
 		// TODO Auto-generated method stub
 		this.getCurrentSession().saveOrUpdate(product);
 	}
+
+	@Override
+	public Product queryByProductId(Integer id) {
+		// TODO Auto-generated method stub
+		Criteria criteria = this.qryCurrentSession().createCriteria(Product.class);
+		criteria.add(Restrictions.eq("productId", id));
+		List<Product> list = criteria.list();
+		if (list.isEmpty())
+			return null;
+		else
+			return list.get(0);
+	}
 	
 	@Override
 	public List<Product> queryByProductName(String name) {
@@ -42,5 +54,6 @@ public class ProductDaoImpl implements ProductDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
 	
 }
