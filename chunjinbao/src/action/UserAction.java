@@ -70,7 +70,7 @@ public class UserAction extends ActionSupport{
 			e.printStackTrace();  
 		}
 		user.setHeadPortrait(session.getAttribute("curUsrTel").toString()+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
-		userService.update(user);
+		userService.updateUserDetail(user);
 		return "userDetail";
 	}
 	

@@ -10,6 +10,7 @@ import org.apache.struts2.ServletActionContext;
 
 import service.UserService;
 import Util.GetGoldPrice;
+import Util.InviteCode;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
@@ -31,6 +32,10 @@ public class LoginAction extends ActionSupport{
 			return "reg";
 		}else{
 			userService.register(user);
+			User dbUser = userService.findUserByTel(user.getTel());
+			dbUser.setShareId(InviteCode.inviteCode(dbUser.getUserId()));
+			userService.update(dbUser);
+			this.setNextAction("login.jsp");
 			
 			return Action.SUCCESS;
 		}

@@ -42,7 +42,7 @@
        	</action>
        
        	<action name="login_*" class="loginAction" method="{1}">
-       		<result name="success" type="redirectAction">${nextAction}</result>
+       		<result name="success" type="redirect">${nextAction}</result>
        		<result name="reg">/reg.jsp</result>
        		<result name="regNext">/regPsw.jsp</result>
 	   	</action>

@@ -9,10 +9,8 @@ public class InviteCode {
 		String inviteCode ="";
 		
 		temp = temp + "9";
-		System.out.println(temp);
 		int[] result1 = randomCommon(1,10,5);
 		for(int i= 0; i<result1.length; i++){
-			System.out.println(result1[i]);
 			inviteCode = temp + result1[i];
 		}
 		return inviteCode;
