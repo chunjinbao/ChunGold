@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -113,11 +114,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a></li>
 					
 					<li>
-						<a href="wxCouponController.do?gjbCouponReceive" style="border-top:1px solid #e2e2e2;"><span style="color:orange;font-weight: 700;">
+						<a href="/chunjinbao/coupon_showCoupon" style="border-top:1px solid #e2e2e2;"><span style="color:orange;font-weight: 700;">
 						
-						100
+						<s:property value="couponNum"/>
 						<img src="plug-in/wechat/images/icon8.png" width="10"></span><i>
-						<img src="plug-in/wechat/images/icon41.png"></i>购金券（元）</a></li>
+						<img src="plug-in/wechat/images/icon41.png"></i>购金券（张）</a></li>
 					
 						
 					<li><a href="wxSpreadBonusController.do?gjbSpreadBonus"><span style="color:orange;font-weight: 700;">

@@ -72,6 +72,11 @@
        		<result name="success">/success.jsp</result>
        		<result name="tobuycurrent">/toBuyCurrent.jsp</result>
        </action>
+       
+       <action name="coupon_*" class="action.CouponAction" method="{1}">
+       		<result name="showCoupon">/coupon.jsp</result>
+       	
+       </action>
 
     </package>
     
