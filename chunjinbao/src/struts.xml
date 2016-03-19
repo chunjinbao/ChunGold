@@ -11,7 +11,7 @@
             <interceptor-stack name="mydefault">  
                 <interceptor-ref name="defaultStack" />  
                 <interceptor-ref name="authority" >
-                	<param name="includeMethods">userDetail,share,moreMyInfoEditor,moreMyInfoEdit</param>
+                	<param name="includeMethods">userDetail,share,moreMyInfoEditor,moreMyInfoEdit,showCoupon</param>
                 </interceptor-ref>
             </interceptor-stack>  
         </interceptors>
@@ -76,6 +76,7 @@
        </action>
        
        <action name="coupon_*" class="action.CouponAction" method="{1}">
+            <interceptor-ref name="mydefault"/>
        		<result name="showCoupon">/coupon.jsp</result>
        	
        </action>
