@@ -10,7 +10,9 @@
             <!-- 拦截器栈 -->  
             <interceptor-stack name="mydefault">  
                 <interceptor-ref name="defaultStack" />  
-                <interceptor-ref name="authority" />  
+                <interceptor-ref name="authority" >
+                	<param name="includeMethods">userDetail,share,moreMyInfoEditor,moreMyInfoEdit</param>
+                </interceptor-ref>
             </interceptor-stack>  
         </interceptors>
         

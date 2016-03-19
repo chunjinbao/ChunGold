@@ -51,7 +51,7 @@ public class UserAction extends ActionSupport{
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		try {
 			String realPath = ServletActionContext.getServletContext().getRealPath(getSavePath_images() + "\\" +   
-					session.getAttribute("userId")+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
+					session.getAttribute("curUsrTel")+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
 			FileOutputStream fos = new FileOutputStream(realPath);  
 			FileInputStream fis = new FileInputStream(getUpload());  
 			byte[] buffer = new byte[3145728];  
@@ -66,7 +66,7 @@ public class UserAction extends ActionSupport{
 		}catch(FileNotFoundException e){  
 			e.printStackTrace();  
 		}
-		user.setHeadPortrait(session.getAttribute("userId").toString()+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
+		user.setHeadPortrait(session.getAttribute("curUsrTel").toString()+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
 		userService.update(user);
 		return "userDetail";
 	}
