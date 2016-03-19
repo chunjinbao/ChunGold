@@ -2,7 +2,13 @@ package action;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
+import service.CouponService;
 import service.ProductService;
+import entity.Coupon;
 import entity.Product;
 
 public class NavAction {
@@ -12,6 +18,9 @@ public class NavAction {
 	private Integer productNumberHuo;
 	private Integer productNumberDing;
 	private ProductService productService;
+	private CouponService couponService;
+	private List<Coupon> coupon;
+	private Integer couponNum;
 	public String insertProduct() throws Exception {
 		productService.insertProduct(product);
 		return "success";
@@ -69,10 +78,36 @@ public class NavAction {
 		this.productService = productService;
 	}
 	public String gold(){
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		Integer userId = (Integer) session.getAttribute("userId");
+		couponNum = 0;
+		if(userId != null){
+			//System.out.println(userId);
+			coupon = couponService.queryByUserIdNum(userId);
+			couponNum = coupon.size();
+		}		
 		return "gold";
 		
 	}
 
+	public CouponService getCouponService() {
+		return couponService;
+	}
+	public void setCouponService(CouponService couponService) {
+		this.couponService = couponService;
+	}
+	public List<Coupon> getCoupon() {
+		return coupon;
+	}
+	public void setCoupon(List<Coupon> coupon) {
+		this.coupon = coupon;
+	}
+	public Integer getCouponNum() {
+		return couponNum;
+	}
+	public void setCouponNum(Integer couponNum) {
+		this.couponNum = couponNum;
+	}
 	public String more(){
 		return "more";
 		
