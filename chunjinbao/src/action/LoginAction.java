@@ -19,6 +19,7 @@ import entity.User;
 public class LoginAction extends ActionSupport{
 	private User user;
 	private UserService userService;
+	private String nextAction;
 	
 	public String preRegister(){
 		
@@ -50,8 +51,9 @@ public class LoginAction extends ActionSupport{
 			
 			session.setAttribute("shareId", dbUser.getshareId());
 			
+			this.setNextAction(session.getAttribute("requestURL").toString());
 		}
-		return ServletActionContext.getRequest().getSession().getAttribute("requestURL").toString();
+		return Action.SUCCESS;
 	}
 	public void logout(){
 		HttpSession session = ServletActionContext.getRequest().getSession();
@@ -96,5 +98,11 @@ public class LoginAction extends ActionSupport{
 	}
 	public void setUserService(UserService userService) {
 		this.userService = userService;
+	}
+	public String getNextAction() {
+		return nextAction;
+	}
+	public void setNextAction(String nextAction) {
+		this.nextAction = nextAction;
 	}
 }
