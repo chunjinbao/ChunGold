@@ -76,7 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<input type="hidden" id="mobileId" value="" name="mobile" readonly="readonly">
                 <ul>
                     <li><span style="color:#acacac ;font-size:14px">更改头像</span>
-	                    <s:if test="%{user.headPortrait == \"1\"}">
+	                    <s:if test="%{user.headPortrait == null}">
 	                    	<img id="avatarId" 
 	                    	 src="plug-in/wechat/images/icon7_01.png" 
 	                    	width="60" height="60">

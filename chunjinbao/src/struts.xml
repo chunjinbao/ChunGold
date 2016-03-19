@@ -10,7 +10,7 @@
             <!-- 拦截器栈 -->  
             <interceptor-stack name="mydefault">  
                 <interceptor-ref name="defaultStack" />  
-                <interceptor-ref name="authority" />  
+                <interceptor-ref name="authority" />
             </interceptor-stack>  
         </interceptors>
         
