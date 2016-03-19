@@ -51,7 +51,7 @@ public class LoginAction extends ActionSupport{
 			session.setAttribute("shareId", dbUser.getshareId());
 			
 		}
-		return Action.SUCCESS;
+		return ServletActionContext.getRequest().getSession().getAttribute("requestURL").toString();
 	}
 	public void logout(){
 		HttpSession session = ServletActionContext.getRequest().getSession();

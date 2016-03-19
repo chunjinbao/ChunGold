@@ -17,6 +17,7 @@ public class AuthorityInterceptor extends MethodFilterInterceptor {
 		String user=(String) session.getAttribute("curUsrTel");
 		//如果没有登陆，返回重新登陆
 		if(user!=null){
+			session.setAttribute("requestURL", ServletActionContext.getRequest().getRequestURL().toString().split("/")[ServletActionContext.getRequest().getRequestURL().toString().split("/").length-1]);
 			return invocation.invoke();
 		}
 		
