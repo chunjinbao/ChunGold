@@ -16,6 +16,7 @@ public class AuthorityInterceptor extends MethodFilterInterceptor {
 		//取出名为curUsrName的session属性
 		String user=(String) session.getAttribute("curUsrTel");
 		//如果没有登陆，返回重新登陆
+		session.setAttribute("requestURL", ServletActionContext.getRequest().getRequestURL().toString().split("/")[ServletActionContext.getRequest().getRequestURL().toString().split("/").length-1]);
 		if(user!=null){
 			return invocation.invoke();
 		}

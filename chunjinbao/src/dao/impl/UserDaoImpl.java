@@ -33,7 +33,7 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public void update(User user) {
+	public void updateUserDetail(User user) {
 		Query query = this.getCurrentSession().createQuery("update User u set u.email = ?,u.userName = ?,u.sex = ?,u.birthday = ?,u.headPortrait = ? where u.userId = ?");  
 		query.setParameter(0, user.getEmail());
 		query.setParameter(1, user.getUserName());
@@ -42,6 +42,11 @@ public class UserDaoImpl implements UserDao {
 		query.setParameter(4, user.getHeadPortrait());
 		query.setParameter(5, user.getUserId());
 	    query.executeUpdate();
+	}
+	
+	@Override
+	public void update(User user){
+		this.getCurrentSession().update(user);
 	}
 
 	public SessionFactory getSessionFactory() {

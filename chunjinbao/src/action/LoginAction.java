@@ -10,6 +10,7 @@ import org.apache.struts2.ServletActionContext;
 
 import service.UserService;
 import Util.GetGoldPrice;
+import Util.InviteCode;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
@@ -19,6 +20,7 @@ import entity.User;
 public class LoginAction extends ActionSupport{
 	private User user;
 	private UserService userService;
+	private String nextAction;
 	
 	public String preRegister(){
 		
@@ -30,6 +32,10 @@ public class LoginAction extends ActionSupport{
 			return "reg";
 		}else{
 			userService.register(user);
+			User dbUser = userService.findUserByTel(user.getTel());
+			dbUser.setShareId(InviteCode.inviteCode(dbUser.getUserId()));
+			userService.update(dbUser);
+			this.setNextAction("login.jsp");
 			
 			return Action.SUCCESS;
 		}
@@ -50,6 +56,7 @@ public class LoginAction extends ActionSupport{
 			
 			session.setAttribute("shareId", dbUser.getshareId());
 			
+			this.setNextAction(session.getAttribute("requestURL").toString());
 		}
 		return Action.SUCCESS;
 	}
@@ -96,5 +103,11 @@ public class LoginAction extends ActionSupport{
 	}
 	public void setUserService(UserService userService) {
 		this.userService = userService;
+	}
+	public String getNextAction() {
+		return nextAction;
+	}
+	public void setNextAction(String nextAction) {
+		this.nextAction = nextAction;
 	}
 }

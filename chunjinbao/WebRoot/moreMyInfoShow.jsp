@@ -67,7 +67,12 @@ function cancle(){
                     <li><b>用户名</b><input type="text" id="realName" value="<s:property value="user.userName"/>" name="realName"  readonly="readonly"></li>
                     <li><b>电子邮箱</b><input type="email" id="email" value="<s:property value="user.email"/>" name="email" readonly="readonly"></li>
                     <li><b>性别</b>
-                    	<input type="text" name="sex"  value="<s:property value="user.sex"/>"  id="sex" readonly="readonly">
+                    	<s:if test="%{user.sex == \"0\"}">
+	                    	<input type="text" name="sex"  value="男"  id="sex" readonly="readonly">
+						</s:if>
+						<s:else>
+	                    	<input type="text" name="sex"  value="女"  id="sex" readonly="readonly">
+						</s:else>
                     </li>
                     <li><b>出生日期</b><input type="text" name="birthDate"  style="background: none;" value="<s:property value="user.birthday"/>"   id="birthDate" readonly="readonly"> </li>
                     <li>
