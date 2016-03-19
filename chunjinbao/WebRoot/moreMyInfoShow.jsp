@@ -1,13 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-String userTel = null;
-if (session.getAttribute("curUsrTel")==null){
-	
-}else{
-    userTel = session.getAttribute("curUsrTel").toString();
-}
+
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -34,6 +30,11 @@ if (session.getAttribute("curUsrTel")==null){
 
 </head>
 <script type="text/javascript">
+$(function (){
+	var tel = "<s:property value="user.tel"/>".substr(0,3)+"****"+"<s:property value="user.tel"/>".substr(7,4);
+	$("#tel").val(tel);
+	
+});
 function cancle(){
 	//返回个人中心 
 	window.location.href = "/chunjinbao/nav_more";
@@ -48,21 +49,27 @@ function cancle(){
             <input type="hidden" id="mobileId"   value="" name="mobile" readonly="readonly">
                 <ul>
                     <li> <a href="/chunjinbao/user_moreMyInfoEditor" ><span style="color:#acacac ;font-size:14px;margin-right: 10px;">点击修改</span> </a>
-                    	<img id="avatarId"
-                    	
-                    	 src="plug-in/wechat/images/pic2.jpg" 
-                    	width="60" height="60">
+                    	<s:if test="%{user.headPortrait == null}">
+	                    	<img id="avatarId" 
+	                    	 src="plug-in/wechat/images/icon7_01.png" 
+	                    	width="60" height="60">
+						</s:if>
+						<s:else>
+	                    	 <img id="avatarId" 
+	                    	 src="${pageContext.request.contextPath}/headPortraits/<s:property value="user.headPortrait"/>" 
+	                    		width="60" height="60">
+	                    </s:else>
                     <!-- 	<input type="file" onchange = "asas()" accept="image/*;capture=camera"  id="file"  name="file"> -->
                     	</li>
-                    <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;"><%= userTel %></span>
+                    <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;"><input id="tel"/></span>
                     <input name="headImg" id="headImg" type="hidden" value="" />
                     </li>
-                    <li><b>用户名</b><input type="text" id="realName" value="" name="realName"  readonly="readonly"></li>
-                    <li><b>电子邮箱</b><input type="email" id="email" value="" name="email" readonly="readonly"></li>
+                    <li><b>用户名</b><input type="text" id="realName" value="<s:property value="user.userName"/>" name="realName"  readonly="readonly"></li>
+                    <li><b>电子邮箱</b><input type="email" id="email" value="<s:property value="user.email"/>" name="email" readonly="readonly"></li>
                     <li><b>性别</b>
-                    	<input type="text" name="sex"  value="--"  id="sex" readonly="readonly">
+                    	<input type="text" name="sex"  value="<s:property value="user.sex"/>"  id="sex" readonly="readonly">
                     </li>
-                    <li><b>出生日期</b><input type="text" name="birthDate"  style="background: none;" value=""   id="birthDate" readonly="readonly"> </li>
+                    <li><b>出生日期</b><input type="text" name="birthDate"  style="background: none;" value="<s:property value="user.birthday"/>"   id="birthDate" readonly="readonly"> </li>
                     <li>
                     </li>
                 </ul> 

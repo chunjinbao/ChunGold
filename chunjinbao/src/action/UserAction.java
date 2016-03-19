@@ -33,6 +33,9 @@ public class UserAction extends ActionSupport{
 	private String savePath_images;
 	
 	public String userDetail(){
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		user = userService.findUserByTel((String) session.getAttribute("curUsrTel"));
+		
 		return "userDetail";
 	}
 	public String share(){
