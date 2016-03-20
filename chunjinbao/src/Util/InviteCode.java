@@ -4,14 +4,11 @@ public class InviteCode {
 	public static String inviteCode(Integer priKey){
 		//Ö÷¼ü
 		
-		String temp = Integer.toOctalString(priKey);
-		
-		String inviteCode ="";
-		
-		temp = temp + "9";
+		String inviteCode = Integer.toOctalString(priKey);
+		inviteCode = inviteCode + "9";
 		int[] result1 = randomCommon(1,10,5);
 		for(int i= 0; i<result1.length; i++){
-			inviteCode = temp + result1[i];
+			inviteCode = inviteCode + result1[i];
 		}
 		return inviteCode;
 		

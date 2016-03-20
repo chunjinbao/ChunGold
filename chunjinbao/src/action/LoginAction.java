@@ -52,8 +52,6 @@ public class LoginAction extends ActionSupport{
 			
 			session.setAttribute("curUsrTel", dbUser.getTel());
 			
-			session.setAttribute("userName", dbUser.getUserName());
-			
 			session.setAttribute("shareId", dbUser.getshareId());
 			
 			this.setNextAction(session.getAttribute("requestURL").toString());
