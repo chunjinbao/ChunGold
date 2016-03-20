@@ -51,7 +51,26 @@ public class User {
 	@Column(name="HEADPORTRAIT", nullable=true, length=200)
 	private String headPortrait;
 	
+	//20160319 新增
+	//用别人的邀请码注册
+	@Column(name="USESHAREID", nullable=true, length=50)
+	private String useShareId;
+	//注册时间
+	@Column(name="REGTIME", nullable=true, length=50)
+	private String regTime;
 	
+	public String getUseShareId() {
+		return useShareId;
+	}
+	public void setUseShareId(String useShareId) {
+		this.useShareId = useShareId;
+	}
+	public String getRegTime() {
+		return regTime;
+	}
+	public void setRegTime(String regTime) {
+		this.regTime = regTime;
+	}
 	public Integer getUserId() {
 		return userId;
 	}

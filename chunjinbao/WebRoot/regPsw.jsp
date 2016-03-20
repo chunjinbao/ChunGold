@@ -44,7 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 	<li><input type="hidden"></li>
                     <li><input id="repsw" name="repsw" type="password" placeholder="请确认登陆密码"></li>
                     <li><a>密码是由6-16位字符组成，同时区分大小写</a></li>
-                    <li><input id="invitecode" name="user.shareId" type="text" placeholder="请输入邀请码（可选）"></li>
+                    <li><input id="invitecode" name="user.useShareId" type="text" placeholder="请输入邀请码（可选）"></li>
                     
                     <li><a href="javascript:submitFrom();">注册</a></li>
                 </ul>

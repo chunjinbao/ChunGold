@@ -12,7 +12,7 @@ String userTel =  null;
 if (session.getAttribute("curUsrTel")==null){
 	
 }else{
-    userName = session.getAttribute("userName").toString();
+   
 	userTel = session.getAttribute("curUsrTel").toString();
 }
 	
