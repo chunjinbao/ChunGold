@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -46,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<section class="warp">
 
 		<div class="recharge">
-			<form id="payForm" name="payForm" action="fiYeepayController.do?doBandingPay" method="post">
+			<form id="payForm" name="payForm" action="<s:url action='bank_turnPay'/>" method="post">
 				<p>请绑定银行卡继续完成实名认证</p>
 				
 				<p>
@@ -98,37 +99,28 @@ function submitFrom(){
 	var bankcardnum = $("#bankcardnum").val();    //请输入银行卡号
 	
 	if(cardname==null||cardname==""||cardname.length<2){
-		 layer.open({
-            content: '请输入正确真实姓名',
-            btn: ['确 定']
-        });
+		alert("请输入正确的真实姓名");
         return;
 	}
 	if(idcard==null||idcard==""||idcard.length<15){
-		 layer.open({
-           content: '请输入正确身份证号',
-           btn: ['确 定']
-       });
+		 alert("请输入正确的身份证号码");
        return;
 	}
 	
 	
-	//验证身份证号码
+	//银行卡号
 	$.ajax({
-		url:"fiYeepayController.do?validateCardId",
+		url:"/chunjinbao/bank_validateCardId",
 		type:"post",
 		data:{'idcard':idcard},
-		dataType:"json",
+		dataType:"text",
 		success:function(result){
-			console.info(result);
-			if(result.code == 'error'){   
-				alert(result.msg);
+			
+			if(result != "ok"){   
+				alert(result);
 			}else{
 				if(bankcardnum==null||bankcardnum==""||bankcardnum.length<15){
-					 layer.open({
-			           content: '请输入正确银行卡号',
-			           btn: ['确 定']
-			       });
+				   alert("请输入正确的银行卡号");
 			       return;
 				}
 				
@@ -138,26 +130,17 @@ function submitFrom(){
 				var payPwd=$("#payPwd").val();
 				
 			    if(val1 == null || val1 == "" || isNaN(val1)){
-			        layer.open({
-			            content: '请输入正确的充值金额',
-			            btn: ['确 定']
-			        });
+			        alert("请输入正确的充值金额");
 			        return;
 			    }
 			    
 			    if(val1<1){
-			        layer.open({
-			            content: '单笔充值金额不能小于1元',
-			            btn: ['确 定']
-			        });
+			        alert("单笔充值金额不能小于1元");
 			        return;
 			    }
 			    
 			    if(val1>50000){
-			        layer.open({
-			            content: '请输入不大于50000的金额',
-			            btn: ['确 定']
-			        });
+			        alert("请输入不大于50000的金额");
 			        return;
 			    }
 			    

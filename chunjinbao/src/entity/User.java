@@ -17,14 +17,11 @@ public class User {
 	private String tel;
 	@Column(name="PASSWORD",nullable=true,length=50)
 	private String password;
-	@Column(name="RELNAME",nullable=true,length=50)
-	private String relName;
-	@Column(name="CARDNUM",nullable=true,length=50)
-	private String cardNum;
+
+
 	@Column(name="TRADEPSW",nullable=true,length=50)
 	private String tradePsw;
-	@Column(name="IDENTITYCARD",nullable=true,length=50)
-	private String identityCard;
+
 	@Column(name="GOLDNUM",nullable=true,length=50)
 	private String goldNum;
 	@Column(name="WALLET",nullable=true,length=50)
@@ -89,30 +86,16 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRelName() {
-		return relName;
-	}
-	public void setRelName(String relName) {
-		this.relName = relName;
-	}
-	public String getCardNum() {
-		return cardNum;
-	}
-	public void setCardNum(String cardNum) {
-		this.cardNum = cardNum;
-	}
+	
+	
 	public String getTradePsw() {
 		return tradePsw;
 	}
 	public void setTradePsw(String tradePsw) {
 		this.tradePsw = tradePsw;
 	}
-	public String getIdentityCard() {
-		return identityCard;
-	}
-	public void setIdentityCard(String identityCard) {
-		this.identityCard = identityCard;
-	}
+	
+	
 	public String getGoldNum() {
 		return goldNum;
 	}

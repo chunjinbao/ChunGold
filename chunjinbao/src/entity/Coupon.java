@@ -16,10 +16,10 @@ public class Coupon {
 	private Integer couponId;
 
 	//  ”√∑∂Œß
-	@Column(name="USABLE",nullable=true,length=5)
+	@Column(name="USABLE",nullable=true,length=50)
 	private String usable;
 
-	@Column(name="ISUSE",nullable=true,length=5)
+	@Column(name="ISUSE",nullable=true,length=50)
 	private String isUse;
 	
 	@Column(name="OBTAINTIME",nullable=true,length=50)

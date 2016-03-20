@@ -46,7 +46,9 @@ public class UserAction extends ActionSupport{
 		userList = userService.findUserAward((String) session.getAttribute("curUsrTel"));
 		return "share";
 	}
-	
+	public String securityCenter(){
+		return "securityCenter";
+	}
 	public List<User> getUserList() {
 		return userList;
 	}

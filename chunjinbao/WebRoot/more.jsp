@@ -60,7 +60,7 @@ if (session.getAttribute("curUsrTel")!=null){
                 
                 
                 <li><a href="wxOnlineGoldController.do?getExpressAddress"><span><img src="plug-in/wechat/images/icon8.png" width="10"></span><i><img src="plug-in/wechat/images/iconAddr.png"></i>&nbsp;<em>收货地址</em></a></li>
-                <li><a href="wxSafeController.do?mySecurityCenter"><span><img src="plug-in/wechat/images/icon8.png" width="10"></span><i><img src="plug-in/wechat/images/iconSafe.png"></i>&nbsp;<em>安全中心</em></a></li>
+                <li><a href="/chunjinbao/user_securityCenter"><span><img src="plug-in/wechat/images/icon8.png" width="10"></span><i><img src="plug-in/wechat/images/iconSafe.png"></i>&nbsp;<em>安全中心</em></a></li>
             
             	<!--
             	<li><a href="wxMoreCenterController.do?moreMy"><span><img src="plug-in/wechat/images/icon8.png" width="10"></span><i><img src="plug-in/wechat/images/icon9.png"></i>&nbsp;<em>我的</em></a></li>

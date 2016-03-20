@@ -11,7 +11,7 @@
             <interceptor-stack name="mydefault">  
                 <interceptor-ref name="defaultStack" />  
                 <interceptor-ref name="authority" >
-                	<param name="includeMethods">userDetail,share,moreMyInfoEditor,moreMyInfoEdit,showCoupon</param>
+                	<param name="includeMethods">userDetail,share,moreMyInfoEditor,moreMyInfoEdit,showCoupon,authen</param>
                 </interceptor-ref>
             </interceptor-stack>  
         </interceptors>
@@ -27,6 +27,7 @@
        		<result name="userDetail">/moreMyInfoShow.jsp</result>
        		<result name="userDetailEdit">/moreMyInfoEditor.jsp</result>
        		<result name="share">/share.jsp</result>
+       		<result name="securityCenter">/securityCenter.jsp</result>
        		<interceptor-ref name="mydefault"/>
        	</action>
        	
@@ -79,6 +80,13 @@
             <interceptor-ref name="mydefault"/>
        		<result name="showCoupon">/coupon.jsp</result>
        	
+       </action>
+       
+       <action name = "bank_*" class= "action.SecurityAction" method="{1}">
+            <interceptor-ref name="mydefault"/>
+            <result name="authen">/realNameAuthen.jsp</result>
+            <result name="tradePsw">/toBandingPay.jsp</result>
+            <result name="turnPay">/turnPay.jsp</result>
        </action>
 
     </package>
