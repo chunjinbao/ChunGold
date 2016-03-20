@@ -92,11 +92,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				sub = false;
 			}
 
-
-			if(sub){
-				$("#form").submit();
-			}	
-			
+            if($("#invitecode").val().replace(/^\s\s*/,"").replace(/\s\s*$/,"")!=""){
+				$.ajax({
+				    type:"POST",
+				    url:"/chunjinbao/login_findShareId",
+				    dataType:"text",
+				    data:{
+				    	shareId : $("#invitecode").val()
+				    },
+				    success:function(result){
+				    	if(result=="error"){
+				   			$("#invitecode").focus();
+				   			alert("未找到该邀请码！");
+				   			return ;
+				   		}else{
+				   			if(sub){
+								$("#form").submit();
+							}
+				   		}
+				    },
+				    error:function(msg){}
+				});
+            }else{
+            	if(sub){
+					$("#form").submit();
+				}
+            }
 		}
 		
 		
