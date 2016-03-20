@@ -50,26 +50,28 @@ public class UserAction extends ActionSupport{
 	}
 	
 	public String moreMyInfoEdit(){
-		Date date = new Date();
-		HttpSession session = ServletActionContext.getRequest().getSession();
-		try {
-			String realPath = ServletActionContext.getServletContext().getRealPath(getSavePath_images() + "\\" +   
-					session.getAttribute("curUsrTel")+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
-			FileOutputStream fos = new FileOutputStream(realPath);  
-			FileInputStream fis = new FileInputStream(getUpload());  
-			byte[] buffer = new byte[3145728];  
-			int len = 0;  
-			try {  
-				while((len = fis.read(buffer)) > 0){  
-					fos.write(buffer, 0, len);  
+		if(getUpload()!=null){
+			Date date = new Date();
+			HttpSession session = ServletActionContext.getRequest().getSession();
+			try {
+				String realPath = ServletActionContext.getServletContext().getRealPath(getSavePath_images() + "\\" +   
+						session.getAttribute("curUsrTel")+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
+				FileOutputStream fos = new FileOutputStream(realPath);  
+				FileInputStream fis = new FileInputStream(getUpload());  
+				byte[] buffer = new byte[3145728];  
+				int len = 0;  
+				try {  
+					while((len = fis.read(buffer)) > 0){  
+						fos.write(buffer, 0, len);  
+					}  
+				} catch (IOException e) {  
+					e.printStackTrace();  
 				}  
-			} catch (IOException e) {  
+			}catch(FileNotFoundException e){  
 				e.printStackTrace();  
-			}  
-		}catch(FileNotFoundException e){  
-			e.printStackTrace();  
+			}
+			user.setHeadPortrait(session.getAttribute("curUsrTel").toString()+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
 		}
-		user.setHeadPortrait(session.getAttribute("curUsrTel").toString()+date.getTime()+"."+this.getUploadContentType().split("/")[1]);
 		userService.updateUserDetail(user);
 		return "userDetail";
 	}

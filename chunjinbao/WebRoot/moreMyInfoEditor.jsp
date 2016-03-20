@@ -92,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     	</li>
                     </li>
                     <li><b>账号</b><span style="margin-right: 10px;font-size: 14px;" name="userTel"><s:property value="user.tel"/></span>
-                    <input name="headImg" id="headImg" type="hidden" value="" />
+                    <input name="user.headPortrait" id="headImg" type="hidden" value="<s:property value="user.headPortrait"/>" />
                     <input name="my_birthDate" value="" type="hidden" id="my_birthDate">
                     <input name="user.userId" id="userId" type="hidden" value="<s:property value="user.userId"/>" />
                     </li>
