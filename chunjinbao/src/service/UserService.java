@@ -7,4 +7,5 @@ public interface UserService {
 	public User findUserByTel(String tel);
 	public void updateUserDetail(User user);
 	public void update(User user);
+	public Integer findShareId(String shareId);
 }

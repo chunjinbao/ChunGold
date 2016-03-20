@@ -25,6 +25,11 @@ public class UserServiceImpl implements UserService {
 	public void update(User user) {
 		this.userDao.update(user);
 	}
+	
+	@Override
+	public Integer findShareId(String shareId) {
+		return this.userDao.findShareId(shareId);
+	}
 
 	public UserDao getUserDao() {
 		return userDao;
@@ -33,4 +38,5 @@ public class UserServiceImpl implements UserService {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
+
 }

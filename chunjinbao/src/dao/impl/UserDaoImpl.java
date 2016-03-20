@@ -44,6 +44,16 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
+	public Integer findShareId(String shareId) {
+		System.out.println(shareId);
+		Criteria criteria = this.qryCurrentSession().createCriteria(User.class);
+		criteria.add(Restrictions.eq("shareId", shareId));
+		List<User> list=criteria.list();
+		
+		return list.size();
+	}
+	
+	@Override
 	public void update(User user){
 		this.getCurrentSession().update(user);
 	}

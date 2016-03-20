@@ -60,6 +60,7 @@ public class LoginAction extends ActionSupport{
 		}
 		return Action.SUCCESS;
 	}
+	
 	public void logout(){
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		session.invalidate();
@@ -83,6 +84,22 @@ public class LoginAction extends ActionSupport{
 		response.setContentType("text/plain;charset=UTF-8");
 		try {
 			if(dbUser==null){
+				response.getWriter().write("ok");
+			}else{
+				response.getWriter().write("error");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void findShareId(){
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpServletResponse response = ServletActionContext.getResponse(); 
+
+		response.setContentType("text/plain;charset=UTF-8");
+		try {
+			if(userService.findShareId(request.getParameter("shareId"))!=0){
 				response.getWriter().write("ok");
 			}else{
 				response.getWriter().write("error");
