@@ -1,5 +1,7 @@
 package service.impl;
 
+import java.util.List;
+
 import service.UserService;
 import dao.UserDao;
 import entity.User;
@@ -37,6 +39,12 @@ public class UserServiceImpl implements UserService {
 
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
+	}
+
+	@Override
+	public List<User> findUserAward(String tel) {
+		// TODO Auto-generated method stub
+		return userDao.findUserAward(tel);
 	}
 
 }

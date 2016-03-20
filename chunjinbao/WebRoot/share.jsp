@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -154,12 +155,24 @@ if (session.getAttribute("curUsrTel")==null){
                 <div class="share_bd_bg">
                     <h2><span>我的奖励</span></h2>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                       
                         <tr>
-                            
-                            <td>奖 励</td>
+                           
+				            <td>奖 励</td>
                             <td>日 期</td>
+					
+				
+                         
                         </tr>
-                        
+                        <s:iterator id="share" value="userList">
+                        <tr>
+                          
+                              <td>  20 元</td>
+                              <td> <s:property value="regTime"/></td>
+                          
+                        </tr>
+                         </s:iterator> 
+                      
                     </table>
                 </div>
             </div>

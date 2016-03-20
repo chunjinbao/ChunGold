@@ -59,6 +59,18 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
+	public List<User> findUserAward(String tel) {
+		// TODO Auto-generated method stub
+		Criteria criteria = this.qryCurrentSession().createCriteria(User.class);
+		criteria.add(Restrictions.eq("tel", tel));
+		List<User> list=criteria.list();
+		Criteria criteria2 = this.qryCurrentSession().createCriteria(User.class);
+		criteria2.add(Restrictions.eq("useShareId", list.get(0).getshareId()));
+		List<User> list1=criteria2.list();
+		return list1;
+	}
+	
+	@Override
 	public void update(User user){
 		this.getCurrentSession().update(user);
 	}
@@ -78,5 +90,7 @@ public class UserDaoImpl implements UserDao {
     public Session qryCurrentSession() {
         return sessionFactory.openSession();// 查询使用的session
     }
+
+
 
 }

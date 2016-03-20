@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import Util.GetGoldPrice;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import entity.Product;
 import entity.User;
 
 public class UserAction extends ActionSupport{
@@ -31,7 +33,7 @@ public class UserAction extends ActionSupport{
 	private String uploadFileName;  
 	//直接在sturts.xml文件中配置值的属性  
 	private String savePath_images;
-	
+	private List<User> userList;
 	public String userDetail(){
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		user = userService.findUserByTel((String) session.getAttribute("curUsrTel"));
@@ -39,9 +41,18 @@ public class UserAction extends ActionSupport{
 		return "userDetail";
 	}
 	public String share(){
+		// 分享邀请码以及奖励
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		userList = userService.findUserAward((String) session.getAttribute("curUsrTel"));
 		return "share";
 	}
 	
+	public List<User> getUserList() {
+		return userList;
+	}
+	public void setUserList(List<User> userList) {
+		this.userList = userList;
+	}
 	public String moreMyInfoEditor(){
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		user = userService.findUserByTel((String) session.getAttribute("curUsrTel"));
