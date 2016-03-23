@@ -40,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <p><i><s:property value="productProfit"/></i><time>%</time><u>按天结息 随买随卖</u></p>
                                 </dt><!--
                              --><dd>
-                                	<p><a href="order_startOrder?productId=<s:property value='productId'/>"><i>买入</i></a></p>
+                                	<p><a href="curOrder_startOrder?productId=<s:property value='productId'/>"><i>买入</i></a></p>
                                 </dd>
                             </dl>
                         </li>

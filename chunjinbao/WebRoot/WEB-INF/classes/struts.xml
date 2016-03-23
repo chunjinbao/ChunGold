@@ -89,6 +89,10 @@
             <result name="turnPay">/turnPay.jsp</result>
        </action>
 
+	   <action name="curOrder_*" class="action.CurOrderAction" method="{1}">
+       		<result name="toCurOrder">/toCurOrder.jsp</result>
+       </action>
+
     </package>
     
 </struts>    

@@ -97,7 +97,8 @@
     
     <bean id="orderService" class="service.impl.OrderServiceImpl">
     	<property name="orderDao" ref="orderDao" />
-    </bean> 
+    </bean>
+    
     <bean id="couponService" class="service.impl.CouponServiceImpl">
     	<property name="couponDao" ref="couponDao" />
     </bean> 
@@ -133,8 +134,6 @@
           
     </bean>
     
-
-    
     <bean id="orderAction" class="action.OrderAction" scope="prototype">  
         <property name="orderService" ref="orderService"></property>  
     </bean>
@@ -143,4 +142,15 @@
         <property name="couponService" ref="couponService"></property>  
     </bean>
 
+	<bean id="curOrderDao" class="dao.impl.CurOrderDaoImpl">  
+		<property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="curOrderService" class="service.impl.CurOrderServiceImpl">
+    	<property name="curOrderDao" ref="curOrderDao" />
+    </bean>
+    
+    <bean id="curOrderAction" class="action.CurOrderAction" scope="prototype">  
+        <property name="curOrderService" ref="curOrderService"></property>  
+    </bean>
 </beans>
