@@ -16,7 +16,7 @@ public class CurOrder {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer curOrderId;
 	@Column(name="TRADENUM",nullable=true,length=50)
-	private String tradeNum;
+	private Double tradeNum;
 	@Column(name="TRADEAMOUNT",nullable=true,length=50)
 	private String tradeAmount;
 	@Column(name="TRADEDATE", nullable=true,length=50)
@@ -39,10 +39,10 @@ public class CurOrder {
 	public void setCurOrderId(Integer curOrderId) {
 		this.curOrderId = curOrderId;
 	}
-	public String getTradeNum() {
+	public Double getTradeNum() {
 		return tradeNum;
 	}
-	public void setTradeNum(String tradeNum) {
+	public void setTradeNum(Double tradeNum) {
 		this.tradeNum = tradeNum;
 	}
 	public String getTradeAmount() {

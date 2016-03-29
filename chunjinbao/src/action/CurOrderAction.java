@@ -25,11 +25,11 @@ public class CurOrderAction {
 	public String insertOrder() throws Exception {
 		double goldPrice = Double.parseDouble(GetGoldPrice.getRequest1());
 		if (curOrder.getTradeNum() == null) {
-			curOrder.setTradeNum((Double.parseDouble(curOrder.getTradeAmount()) / goldPrice) + "");
+			curOrder.setTradeNum(Double.parseDouble(curOrder.getTradeAmount()) / goldPrice);
 		}
 		
 		else if (curOrder.getTradeAmount() == null) {
-			curOrder.setTradeAmount((Double.parseDouble(curOrder.getTradeNum()) * goldPrice) + "");
+			curOrder.setTradeAmount((curOrder.getTradeNum() * goldPrice) + "");
 		}
 		
 		HttpServletRequest request = ServletActionContext.getRequest();
