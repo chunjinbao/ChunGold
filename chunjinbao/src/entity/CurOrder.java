@@ -20,7 +20,7 @@ public class CurOrder {
 	@Column(name="TRADEAMOUNT",nullable=true,length=50)
 	private String tradeAmount;
 	@Column(name="TRADEDATE", nullable=true,length=50)
-	private Date tradeDate;
+	private String tradeDate;
 	@Column(name="TRADETIME",nullable=true,length=50)
 	private String tradeTime;
 	@Column(name="PAYTYPE",nullable=true,length=50)
@@ -51,10 +51,10 @@ public class CurOrder {
 	public void setTradeAmount(String tradeAmount) {
 		this.tradeAmount = tradeAmount;
 	}
-	public Date getTradeDate() {
+	public String getTradeDate() {
 		return tradeDate;
 	}
-	public void setTradeDate(Date tradeDate) {
+	public void setTradeDate(String tradeDate) {
 		this.tradeDate = tradeDate;
 	}
 	public String getTradeTime() {

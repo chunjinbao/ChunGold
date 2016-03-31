@@ -18,9 +18,6 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void register(User user) {
-		Date regTime = new Date();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
-		user.setRegTime(dateFormat.format(regTime));
 		this.getCurrentSession().saveOrUpdate(user);
 	}
 

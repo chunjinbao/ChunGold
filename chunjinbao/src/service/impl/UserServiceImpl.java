@@ -2,6 +2,7 @@ package service.impl;
 
 import java.util.List;
 
+import Util.GetTime;
 import service.UserService;
 import dao.UserDao;
 import entity.User;
@@ -10,7 +11,8 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	@Override
 	public void register(User user) {
-			this.userDao.register(user);
+		user.setRegTime(GetTime.nowDate());
+		this.userDao.register(user);
 	}
 
 	@Override

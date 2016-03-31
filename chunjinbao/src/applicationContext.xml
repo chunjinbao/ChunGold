@@ -23,7 +23,7 @@
     </bean>
 	
 	<task:scheduled-tasks>   
-        <task:scheduled ref="calProfit" method="job1" cron="0 58 20 * * ?"/>   
+        <task:scheduled ref="calProfit" method="updateUserProfit" cron="0 14 17 * * ?"/>   
 	</task:scheduled-tasks>  
 	
 	<bean id="dataSource"  
