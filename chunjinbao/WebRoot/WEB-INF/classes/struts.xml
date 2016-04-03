@@ -92,6 +92,10 @@
 	   <action name="curOrder_*" class="action.CurOrderAction" method="{1}">
        		<result name="toCurOrder">/toCurOrder.jsp</result>
        </action>
+       
+       <action name="dingProfit_*" class="action.DingProfitAction" method="{1}">
+       		<result name="dingprofit">/myProfit.jsp</result>
+       </action>
 
     </package>
     

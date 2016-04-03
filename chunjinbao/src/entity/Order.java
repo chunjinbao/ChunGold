@@ -20,10 +20,8 @@ public class Order {
 	private String tradeNum;
 	@Column(name="TRADEAMOUNT",nullable=true,length=50)
 	private String tradeAmount;
-	@Column(name="TRADEDATE", nullable=true,length=50)
-	private Date tradeDate;
 	@Column(name="TRADETIME",nullable=true,length=50)
-	private Time tradeTime;
+	private long tradeTime;
 	@Column(name="PAYTYPE",nullable=true,length=50)
 	private String payType;
 	@Column(name="USERID",nullable=true,length=50)
@@ -34,12 +32,6 @@ public class Order {
 	private Integer couponId;
 	public Integer getOrderId() {
 		return orderId;
-	}
-	public Date getTradeDate() {
-		return tradeDate;
-	} 
-	public void setTradeDate(Date tradeDate) {
-		this.tradeDate = tradeDate;
 	}
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
@@ -56,14 +48,14 @@ public class Order {
 	public void setTradeAmount(String tradeAmount) {
 		this.tradeAmount = tradeAmount;
 	}
-	public Time getTradeTime() {
-		return tradeTime;
-	}
-	public void setTradeTime(Time tradeTime) {
-		this.tradeTime = tradeTime;
-	}
 	public String getPayType() {
 		return payType;
+	}
+	public long getTradeTime() {
+		return tradeTime;
+	}
+	public void setTradeTime(long tradeTime) {
+		this.tradeTime = tradeTime;
 	}
 	public void setPayType(String payType) {
 		this.payType = payType;
